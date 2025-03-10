@@ -1405,3 +1405,145 @@ arm-none-eabi-size  cv2.elf
   24100	     92	   3644	  27836	   6cbc	cv2.elf
 Finished building: default.size.stdout
  
+17:24:30 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:176:27: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  176 |                           sprintf(str, "Perioda blikani \r\n", cntr++);
+      |                           ^~~~~~~
+../Core/Src/main.c:26:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   25 | #include "string.h"
+  +++ |+#include <stdio.h>
+   26 | /* USER CODE END Includes */
+../Core/Src/main.c:176:27: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  176 |                           sprintf(str, "Perioda blikani \r\n", cntr++);
+      |                           ^~~~~~~
+../Core/Src/main.c:176:27: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:176:40: warning: too many arguments for format [-Wformat-extra-args]
+  176 |                           sprintf(str, "Perioda blikani \r\n", cntr++);
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:177:40: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast [-Wint-conversion]
+  177 |                           sprintf(str, ButtonPressTime, cntr++);
+      |                                        ^~~~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t {aka long unsigned int}
+../Core/Src/main.c:177:40: note: expected 'const char *' but argument is of type 'uint32_t' {aka 'long unsigned int'}
+../Core/Src/main.c:192:43: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  192 |                                           sprintf(str, "Zmena stavu na 2 \r\n", cntr++);
+      |                                           ^~~~~~~
+../Core/Src/main.c:192:43: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:192:56: warning: too many arguments for format [-Wformat-extra-args]
+  192 |                                           sprintf(str, "Zmena stavu na 2 \r\n", cntr++);
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:205:43: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  205 |                                           sprintf(str, "Zmena stavu na 1 \r\n", cntr++);
+      |                                           ^~~~~~~
+../Core/Src/main.c:205:43: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:205:56: warning: too many arguments for format [-Wformat-extra-args]
+  205 |                                           sprintf(str, "Zmena stavu na 1 \r\n", cntr++);
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:209:43: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  209 |                                           sprintf(str, "Zmena Red Led \r\n", cntr++);
+      |                                           ^~~~~~~
+../Core/Src/main.c:209:43: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:209:56: warning: too many arguments for format [-Wformat-extra-args]
+  209 |                                           sprintf(str, "Zmena Red Led \r\n", cntr++);
+      |                                                        ^~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  24244	     92	   3644	  27980	   6d4c	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+17:32:45 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:140:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  140 |           sprintf(str, "Run %08lu\r\n", cntr++);
+      |           ^~~~~~~
+../Core/Src/main.c:26:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   25 | #include "string.h"
+  +++ |+#include <stdio.h>
+   26 | /* USER CODE END Includes */
+../Core/Src/main.c:140:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  140 |           sprintf(str, "Run %08lu\r\n", cntr++);
+      |           ^~~~~~~
+../Core/Src/main.c:140:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:145:27: warning: implicit declaration of function 'Error_Handle'; did you mean 'Error_Handler'? [-Wimplicit-function-declaration]
+  145 |                           Error_Handle();
+      |                           ^~~~~~~~~~~~
+      |                           Error_Handler
+../Core/Src/main.c:199:56: warning: too many arguments for format [-Wformat-extra-args]
+  199 |                                           sprintf(str, "Zmena stavu na 2 \r\n", cntr++);
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:212:56: warning: too many arguments for format [-Wformat-extra-args]
+  212 |                                           sprintf(str, "Zmena stavu na 1 \r\n", cntr++);
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:216:56: warning: too many arguments for format [-Wformat-extra-args]
+  216 |                                           sprintf(str, "Zmena stavu cer led \r\n", cntr++);
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:216:77: warning: 'Zmena stavu cer led 
+   ' directive writing 22 bytes into a region of size 20 [-Wformat-overflow=]
+  216 |                                           sprintf(str, "Zmena stavu cer led \r\n", cntr++);
+      |                                                         ~~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/main.c:216:43: note: 'sprintf' output 23 bytes into a destination of size 20
+  216 |                                           sprintf(str, "Zmena stavu cer led \r\n", cntr++);
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `main':
+C:/Users/mates/Desktop/TUL/VST/cviceni/cv2/Debug/../Core/Src/main.c:145: undefined reference to `Error_Handle'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: cv2.elf] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+17:33:22 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:140:11: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  140 |           sprintf(str, "Run %08lu\r\n", cntr++);
+      |           ^~~~~~~
+../Core/Src/main.c:26:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   25 | #include "string.h"
+  +++ |+#include <stdio.h>
+   26 | /* USER CODE END Includes */
+../Core/Src/main.c:140:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  140 |           sprintf(str, "Run %08lu\r\n", cntr++);
+      |           ^~~~~~~
+../Core/Src/main.c:140:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:183:40: warning: too many arguments for format [-Wformat-extra-args]
+  183 |                           sprintf(str, "Perioda blikani \r\n", cntr++);
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:199:56: warning: too many arguments for format [-Wformat-extra-args]
+  199 |                                           sprintf(str, "Zmena stavu na 2 \r\n", cntr++);
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:212:56: warning: too many arguments for format [-Wformat-extra-args]
+  212 |                                           sprintf(str, "Zmena stavu na 1 \r\n", cntr++);
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:216:56: warning: too many arguments for format [-Wformat-extra-args]
+  216 |                                           sprintf(str, "Zmena stavu cer led \r\n", cntr++);
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:216:77: warning: 'Zmena stavu cer led 
+   ' directive writing 22 bytes into a region of size 20 [-Wformat-overflow=]
+  216 |                                           sprintf(str, "Zmena stavu cer led \r\n", cntr++);
+      |                                                         ~~~~~~~~~~~~~~~~~~~~^~~~
+../Core/Src/main.c:216:43: note: 'sprintf' output 23 bytes into a destination of size 20
+  216 |                                           sprintf(str, "Zmena stavu cer led \r\n", cntr++);
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  24292	     92	   3644	  28028	   6d7c	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 

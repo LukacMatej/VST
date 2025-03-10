@@ -138,9 +138,12 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	  sprintf(str, "Run %08lu\r\n", cntr++);
-	  HAL_StatusTypeDef err = HAL_UART_Transmit(&hlpuart1, (uint8_t *)str, strlen(str), 100);
-	  if (err != HAL_OK){
-		  Error_Handler();
+	  if (!tx_in_process){
+		  tx_in_process = 1;
+		  HAL_StatusTypeDef err = HAL_UART_Transmit(&hlpuart1, (uint8_t *)str, strlen(str), 100);
+		  if (err != HAL_OK){
+			  Error_Handler();
+		  }
 	  }
 	  tick = HAL_GetTick();
 	  switch (state){
@@ -174,6 +177,8 @@ int main(void)
 		  }
 		  if (tick-tickLedR >= (ButtonPressTime/2))  {
 			  tickLedR += ButtonPressTime/2;
+			  sprintf(str, "Perioda blikani \r\n", cntr++);
+			  sprintf(str, "Run %08lu\r\n", ButtonPressTime);
 			  HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
 		  }
 	  }
@@ -188,6 +193,7 @@ int main(void)
 				  ButtonPressTime = tick-tickButtonPress;
 				  if (tick-tickButtonPress >= 1000 && state == 1){
 					  state = 2;
+					  sprintf(str, "Zmena stavu na 2 \r\n", cntr++);
 				  }
 			  }
 		  }
@@ -200,9 +206,11 @@ int main(void)
 				  tickButtonPress = tick;
 				  if (state == 0){
 					  state = 1;
+					  sprintf(str, "Zmena stavu na 1 \r\n", cntr++);
 				  }
 				  if (!RedBlinking){
 					  HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
+					  sprintf(str, "Zmena stavu cer led \r\n", cntr++);
 				  }
 			  }
 		  }
