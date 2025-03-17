@@ -1,0 +1,24 @@
+17:00:02 **** Incremental Build of configuration Debug for project cv06_uart ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:131:125: warning: 'sprintf' writing a terminating nul past the end of the destination [-Wformat-overflow=]
+  131 |           sprintf(str, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+      |                                                                                                                             ^
+../Core/Src/main.c:131:11: note: 'sprintf' output 101 bytes into a destination of size 100
+  131 |           sprintf(str, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "cv06_uart.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv06_uart\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv06_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv06_uart.elf
+ 
+arm-none-eabi-size  cv06_uart.elf 
+arm-none-eabi-objdump -h -S cv06_uart.elf  > "cv06_uart.list"
+   text	   data	    bss	    dec	    hex	filename
+  26264	     96	   3760	  30120	   75a8	cv06_uart.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv06_uart.list
+ 
+
+17:00:05 Build Finished. 0 errors, 1 warnings. (took 2s.221ms)
+

@@ -23,6 +23,7 @@
 /* USER CODE BEGIN Includes */
 #include "stdbool.h"
 #include "string.h"
+#include "stdio.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -71,11 +72,11 @@ static void MX_USB_OTG_FS_PCD_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-int tx_in_process;
-
+bool tx_in_process;
+uint32_t len_process;
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart){
 	time_end = HAL_GetTick();
-	tx_in_process = 0;
+	tx_in_process = false;
 	blik_bool = false;
 }
 
@@ -115,55 +116,63 @@ int main(void)
   MX_USART3_UART_Init();
   MX_USB_OTG_FS_PCD_Init();
   /* USER CODE BEGIN 2 */
-  uint32_t state = 0;
+  uint32_t state = 1;
   char type_of_transmit[15];
+  HAL_StatusTypeDef err;
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  sprintf(str, "Ahoj jak se mas? Mam se dobre, dekuji za optani, potrebuju 100 znaku takze, asdasdasdasdasdasdaasdas");
   while (1)
   {
     /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+	  sprintf(str, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 	  if (!tx_in_process){
 		  time_start = HAL_GetTick();
-		  tx_in_process = 1;
+		  tx_in_process = true;
 		  switch (state){
 		  case 0:
-			  HAL_StatusTypeDef err = HAL_UART_Transmit(&hlpuart1, (uint8_t *)str, strlen(str), 100);
+			  err = HAL_UART_Transmit(&hlpuart1, (uint8_t *)str, strlen(str), 100);
 			  sprintf(type_of_transmit, "Trasmit");
 			  break;
 		  case 1:
-			  HAL_StatusTypeDef err = HAL_UART_Transmit_DMA(&hlpuart1, (uint8_t *)str, strlen(str), 100);
+			  err = HAL_UART_Transmit_DMA(&hlpuart1, (uint8_t *)str, strlen(str));
 			  sprintf(type_of_transmit, "Trasmit_DMA");
 			  break;
 		  case 2:
-			  HAL_StatusTypeDef err = HAL_UART_Transmit_IT(&hlpuart1, (uint8_t *)str, strlen(str), 100);
+			  err = HAL_UART_Transmit_IT(&hlpuart1, (uint8_t *)str, strlen(str));
 			  sprintf(type_of_transmit, "Trasmit_IT");
 			  break;
-		  }if (err != HAL_OK){
+		  }
+		  if (err != HAL_OK){
 			  Error_Handler();
 		  }
-		  if (blik_bool){
-			  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-			  blik_counter += 1;
-		  }
+	  }
+	  if (tx_in_process && blik_bool){
+		  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+		  blik_counter += 1;
 	  }
 	  if (!blik_bool){
-			sprintf(str, "\r\n Start: %d,Transmit length: %d, Blik count: %d, Type: %s  \r\n", time_start, time_end-time_start, blik_counter, type_of_transmit);
+		  	len_process = time_end-time_start;
+			sprintf(str, "\r\n Start: %lu ,Transmit length: %lu, Blik count: %lu, Type: %s  \r\n", time_start, len_process, blik_counter, type_of_transmit);
 			if (!tx_in_process){
 				tx_in_process = 1;
-				HAL_StatusTypeDef err = HAL_UART_Transmit(&hlpuart1, (uint8_t *)str, strlen(str), 100);
+				HAL_StatusTypeDef err = HAL_UART_Transmit_DMA(&hlpuart1, (uint8_t *)str, strlen(str));
+				blik_counter = 0;
 				if (err != HAL_OK){
 					Error_Handler();
 				}
 			}
-			HAL_Delay(500);
+			HAL_Delay(1000);
 			state = state + 1;
+			blik_bool = true;
 	  }
 	  if (state > 2){
-		  state = 0;
+		  state = 1;
 	  }
+//	  tx_in_process = false;
   }
   /* USER CODE END 3 */
 }
@@ -234,8 +243,8 @@ static void MX_LPUART1_UART_Init(void)
 
   /* USER CODE END LPUART1_Init 1 */
   hlpuart1.Instance = LPUART1;
-  hlpuart1.Init.BaudRate = 209700;
-  hlpuart1.Init.WordLength = UART_WORDLENGTH_7B;
+  hlpuart1.Init.BaudRate = 115200;
+  hlpuart1.Init.WordLength = UART_WORDLENGTH_8B;
   hlpuart1.Init.StopBits = UART_STOPBITS_1;
   hlpuart1.Init.Parity = UART_PARITY_NONE;
   hlpuart1.Init.Mode = UART_MODE_TX_RX;
