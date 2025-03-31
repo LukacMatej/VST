@@ -108,6 +108,10 @@ void inputCommand(const char *rxbuffer) {
     	HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
     	HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, GPIO_PIN_RESET);
     	period = atoi(rxbuffer + 5);
+    	HAL_UART_Transmit(&hlpuart1, (uint8_t *)"\r\nBLIK: ", 8, 100);
+    	sprintf(buffer, "%lu", period);
+    	HAL_UART_Transmit(&hlpuart1, (uint8_t *)buffer, strlen(buffer), 100);
+    	HAL_UART_Transmit(&hlpuart1, (uint8_t *)"\r\n", 2, 100);
     	state=3;
     }
 }
@@ -231,6 +235,7 @@ int main(void)
 		  break;
 	  case 3:
     	  if(tick-tickAll>=period){
+    		  tickAll += period;
     		  HAL_GPIO_TogglePin(LD1_GPIO_Port, LD1_Pin);
     		  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
     		  HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
