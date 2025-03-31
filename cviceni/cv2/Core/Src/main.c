@@ -24,6 +24,7 @@
 #include "stdbool.h"
 #include "string.h"
 #include "stdlib.h"
+#include "stdio.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -167,7 +168,7 @@ int main(void)
   uint32_t tickButton = HAL_GetTick();
   uint32_t tickButtonPress= 0;
   uint32_t tick = 0;
-
+  bool ledRState = false;
 
   while (1)
   {
@@ -204,19 +205,21 @@ int main(void)
           if (button_state){
         	  state = 1; //stav 2
 			  HAL_UART_Transmit(&hlpuart1, (uint8_t *)"\r\n Zmena stavu na 1", 19, 100);
+			  HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, GPIO_PIN_RESET);
           }
 		  break;
 	  case 1:
+
 		  if (tick - tickLedB >= 100)  {
 			  tickLedB += 50;
 			  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
 		  }
-		  if (button_state){
-			  HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
-		  }
 		  if (ButtonPressTime >= 1000){
 			  state = 2; //stav 4
 			  HAL_UART_Transmit(&hlpuart1, (uint8_t *)"\r\n Zmena stavu na 2", 19, 100);
+			  HAL_UART_Transmit(&hlpuart1, (uint8_t *)"\r\n Perioda blikani ", 19, 100);
+			  sprintf(buffer, "%lu", ButtonPressTime);
+			  HAL_UART_Transmit(&hlpuart1, (uint8_t *)buffer, strlen(buffer), 100);
 		  }
 		  break;
 	  case 2:
@@ -227,9 +230,6 @@ int main(void)
 		  }
 		  if (tick-tickLedR >= (ButtonPressTime/2))  {
 			  tickLedR += ButtonPressTime/2;
-			  HAL_UART_Transmit(&hlpuart1, (uint8_t *)"\r\n Perioda blikani ", 19, 100);
-			  sprintf(buffer, "%lu", ButtonPressTime);
-			  HAL_UART_Transmit(&hlpuart1, (uint8_t *)buffer, strlen(buffer), 100);
 			  HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
 		  }
 		  break;
@@ -251,6 +251,11 @@ int main(void)
 			  if (tick-tickButton > 20) { // platne pusteni tlacitka
 				  button_state = false;
 				  ButtonPressTime = tick-tickButtonPress;
+				  if (state == 2){
+					  HAL_UART_Transmit(&hlpuart1, (uint8_t *)"\r\n Perioda blikani ", 19, 100);
+					  sprintf(buffer, "%lu", ButtonPressTime);
+					  HAL_UART_Transmit(&hlpuart1, (uint8_t *)buffer, strlen(buffer), 100);
+				  }
 			  }
 		  }
 	  } else {
@@ -260,6 +265,19 @@ int main(void)
 			  if (tick-tickButton > 20) { // platne stisknuti tlacitka
 				  button_state = true;
 				  tickButtonPress = tick;
+				  if (state == 1){
+					  if (button_state){
+						  HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
+						  if (ledRState){
+							  HAL_UART_Transmit(&hlpuart1, (uint8_t *)"\r\nZmena Cervene LED na OFF", 26, 100);
+							  ledRState = false;
+						  }
+						  else {
+							  HAL_UART_Transmit(&hlpuart1, (uint8_t *)"\r\nZmena Cervene LED na ON", 25, 100);
+							  ledRState = true;
+						  }
+					  }
+				  }
 			  }
 		  }
 	  }

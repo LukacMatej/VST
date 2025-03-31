@@ -1,4 +1,4 @@
-16:27:31 **** Incremental Build of configuration Debug for project cv06_uart ****
+16:51:52 **** Build of configuration Debug for project cv06_uart ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
@@ -23,6 +23,12 @@ arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -D
 ../Core/Src/main.c:125:21: warning: unused variable 'err' [-Wunused-variable]
   125 |   HAL_StatusTypeDef err;
       |                     ^~~
+../Core/Src/main.c:124:11: warning: unused variable 'rxpos' [-Wunused-variable]
+  124 |   uint8_t rxpos;
+      |           ^~~~~
+../Core/Src/main.c:123:8: warning: unused variable 'rxbuffer' [-Wunused-variable]
+  123 |   char rxbuffer[10];
+      |        ^~~~~~~~
 ../Core/Src/main.c:122:8: warning: unused variable 'type_of_transmit' [-Wunused-variable]
   122 |   char type_of_transmit[15];
       |        ^~~~~~~~~~~~~~~~
@@ -69,5 +75,5 @@ arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -D
 make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
 "make -j12 all" terminated with exit code 2. Build might be incomplete.
 
-16:27:34 Build Failed. 7 errors, 15 warnings. (took 3s.284ms)
+16:51:54 Build Failed. 7 errors, 17 warnings. (took 1s.546ms)
 

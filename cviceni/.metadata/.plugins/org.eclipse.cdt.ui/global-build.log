@@ -12,3 +12,368 @@ arm-none-eabi-size  cv2.elf
   25940	     92	   3732	  29764	   7444	cv2.elf
 Finished building: default.size.stdout
  
+16:26:05 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-size  cv2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25940	     92	   3732	  29764	   7444	cv2.elf
+Finished building: default.size.stdout
+ 
+16:45:56 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'inputCommand':
+../Core/Src/main.c:112:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  112 |         sprintf(buffer, "%lu", period);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include "stdlib.h"
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:112:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  112 |         sprintf(buffer, "%lu", period);
+      |         ^~~~~~~
+../Core/Src/main.c:112:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:241:27: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  241 |                           sprintf(buffer, "%lu", ButtonPressTime);
+      |                           ^~~~~~~
+../Core/Src/main.c:241:27: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  26056	     92	   3732	  29880	   74b8	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+16:47:20 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'inputCommand':
+../Core/Src/main.c:112:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  112 |         sprintf(buffer, "%lu", period);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include "stdlib.h"
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:112:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  112 |         sprintf(buffer, "%lu", period);
+      |         ^~~~~~~
+../Core/Src/main.c:112:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:241:27: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  241 |                           sprintf(buffer, "%lu", ButtonPressTime);
+      |                           ^~~~~~~
+../Core/Src/main.c:241:27: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  26064	     92	   3732	  29888	   74c0	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+16:48:07 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'inputCommand':
+../Core/Src/main.c:112:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  112 |         sprintf(buffer, "%lu", period);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include "stdlib.h"
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:112:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  112 |         sprintf(buffer, "%lu", period);
+      |         ^~~~~~~
+../Core/Src/main.c:112:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:241:27: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  241 |                           sprintf(buffer, "%lu", ButtonPressTime);
+      |                           ^~~~~~~
+../Core/Src/main.c:241:27: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  26060	     92	   3732	  29884	   74bc	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+16:50:55 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'inputCommand':
+../Core/Src/main.c:112:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  112 |         sprintf(buffer, "%lu", period);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include "stdlib.h"
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:112:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  112 |         sprintf(buffer, "%lu", period);
+      |         ^~~~~~~
+../Core/Src/main.c:112:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:241:27: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  241 |                           sprintf(buffer, "%lu", ButtonPressTime);
+      |                           ^~~~~~~
+../Core/Src/main.c:241:27: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  26100	     92	   3732	  29924	   74e4	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+16:51:52 **** Build of configuration Debug for project cv06_uart ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:255:13: error: invalid storage class for function 'MX_LPUART1_UART_Init'
+  255 | static void MX_LPUART1_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:303:13: error: invalid storage class for function 'MX_USART3_UART_Init'
+  303 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:351:13: error: invalid storage class for function 'MX_USB_OTG_FS_PCD_Init'
+  351 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:384:13: error: invalid storage class for function 'MX_DMA_Init'
+  384 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:406:13: error: invalid storage class for function 'MX_GPIO_Init'
+  406 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+  474 | }
+      | ^
+../Core/Src/main.c:125:21: warning: unused variable 'err' [-Wunused-variable]
+  125 |   HAL_StatusTypeDef err;
+      |                     ^~~
+../Core/Src/main.c:124:11: warning: unused variable 'rxpos' [-Wunused-variable]
+  124 |   uint8_t rxpos;
+      |           ^~~~~
+../Core/Src/main.c:123:8: warning: unused variable 'rxbuffer' [-Wunused-variable]
+  123 |   char rxbuffer[10];
+      |        ^~~~~~~~
+../Core/Src/main.c:122:8: warning: unused variable 'type_of_transmit' [-Wunused-variable]
+  122 |   char type_of_transmit[15];
+      |        ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:121:12: warning: unused variable 'state' [-Wunused-variable]
+  121 |   uint32_t state = 1;
+      |            ^~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:65:13: warning: 'MX_GPIO_Init' used but never defined
+   65 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:66:13: warning: 'MX_DMA_Init' used but never defined
+   66 | static void MX_DMA_Init(void);
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:67:13: warning: 'MX_LPUART1_UART_Init' used but never defined
+   67 | static void MX_LPUART1_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:68:13: warning: 'MX_USART3_UART_Init' used but never defined
+   68 | static void MX_USART3_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:69:13: warning: 'MX_USB_OTG_FS_PCD_Init' used but never defined
+   69 | static void MX_USB_OTG_FS_PCD_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:465:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  465 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:406:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  406 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:384:13: warning: 'MX_DMA_Init' defined but not used [-Wunused-function]
+  384 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:351:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+  351 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:303:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+  303 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:255:13: warning: 'MX_LPUART1_UART_Init' defined but not used [-Wunused-function]
+  255 | static void MX_LPUART1_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:204:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  204 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+16:51:59 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'inputCommand':
+../Core/Src/main.c:112:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  112 |         sprintf(buffer, "%lu", period);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include "stdlib.h"
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:112:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  112 |         sprintf(buffer, "%lu", period);
+      |         ^~~~~~~
+../Core/Src/main.c:112:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:241:27: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  241 |                           sprintf(buffer, "%lu", ButtonPressTime);
+      |                           ^~~~~~~
+../Core/Src/main.c:241:27: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:170:8: warning: unused variable 'ledRState' [-Wunused-variable]
+  170 |   bool ledRState = false;
+      |        ^~~~~~~~~
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  26000	     92	   3732	  29824	   7480	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+16:53:17 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'inputCommand':
+../Core/Src/main.c:112:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  112 |         sprintf(buffer, "%lu", period);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include "stdlib.h"
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:112:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  112 |         sprintf(buffer, "%lu", period);
+      |         ^~~~~~~
+../Core/Src/main.c:112:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:230:27: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  230 |                           sprintf(buffer, "%lu", ButtonPressTime);
+      |                           ^~~~~~~
+../Core/Src/main.c:230:27: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:170:8: warning: unused variable 'ledRState' [-Wunused-variable]
+  170 |   bool ledRState = false;
+      |        ^~~~~~~~~
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  25976	     92	   3732	  29800	   7468	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+16:56:38 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'inputCommand':
+../Core/Src/main.c:112:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  112 |         sprintf(buffer, "%lu", period);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include "stdlib.h"
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:112:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  112 |         sprintf(buffer, "%lu", period);
+      |         ^~~~~~~
+../Core/Src/main.c:112:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:230:27: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  230 |                           sprintf(buffer, "%lu", ButtonPressTime);
+      |                           ^~~~~~~
+../Core/Src/main.c:230:27: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  26084	     92	   3732	  29908	   74d4	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+16:57:59 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'inputCommand':
+../Core/Src/main.c:112:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  112 |         sprintf(buffer, "%lu", period);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include "stdlib.h"
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:112:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  112 |         sprintf(buffer, "%lu", period);
+      |         ^~~~~~~
+../Core/Src/main.c:112:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:252:43: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  252 |                                           sprintf(buffer, "%lu", ButtonPressTime);
+      |                                           ^~~~~~~
+../Core/Src/main.c:252:43: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  26088	     92	   3732	  29912	   74d8	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+16:59:44 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  26088	     92	   3732	  29912	   74d8	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+17:00:38 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  26152	     92	   3732	  29976	   7518	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
