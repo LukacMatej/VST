@@ -763,3 +763,10 @@ void HAL_SYSCFG_DisableIOAnalogSwitchBooster(void)
 /**
   * @}
   */
+
+
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+//Start: 19 ,Transmit length: 0, Blik count: 615, Type: Trasmit_DMA
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+//Start: 1028 ,Transmit length: 0, Blik count: 1200, Type: Trasmit_IT
+

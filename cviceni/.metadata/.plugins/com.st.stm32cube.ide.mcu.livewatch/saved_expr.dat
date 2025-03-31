@@ -1,4 +1,12 @@
-ButtonPressTime
-LedBState
-tickLedB
-tick
+str
+blik_bool
+blik_counter
+time_start
+time_end
+tx_in_process
+len_process
+click
+counter
+start_time
+end_time
+state

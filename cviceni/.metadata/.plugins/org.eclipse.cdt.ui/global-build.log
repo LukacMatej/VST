@@ -2336,3 +2336,1742 @@ Finished building: default.size.stdout
  
 Finished building: cv06_uart.list
  
+17:05:42 **** Incremental Build of configuration Debug for project cv06_uart ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:195:11: error: 'str' undeclared (first use in this function)
+  195 |   sprintf(str, "Ahoj jak se mas? Mam se dobre, dekuji za optani, potrebuju 100 znaku takze, asdasdasdasdasdasdaasdas");
+      |           ^~~
+../Core/Src/main.c:195:11: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:190:8: warning: unused variable 'type_of_transmit' [-Wunused-variable]
+  190 |   char type_of_transmit[15];
+      |        ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:189:12: warning: unused variable 'state' [-Wunused-variable]
+  189 |   uint32_t state = 0;
+      |            ^~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+17:06:00 **** Incremental Build of configuration Debug for project cv06_uart ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:190:8: warning: unused variable 'type_of_transmit' [-Wunused-variable]
+  190 |   char type_of_transmit[15];
+      |        ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:189:12: warning: unused variable 'state' [-Wunused-variable]
+  189 |   uint32_t state = 0;
+      |            ^~~~~
+arm-none-eabi-gcc -o "cv06_uart.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv06_uart\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv06_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv06_uart.elf
+ 
+arm-none-eabi-size  cv06_uart.elf 
+arm-none-eabi-objdump -h -S cv06_uart.elf  > "cv06_uart.list"
+   text	   data	    bss	    dec	    hex	filename
+  26452	     92	   3748	  30292	   7654	cv06_uart.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv06_uart.list
+ 
+17:07:49 **** Incremental Build of configuration Debug for project cv06_uart ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:131:125: warning: 'sprintf' writing a terminating nul past the end of the destination [-Wformat-overflow=]
+  131 |           sprintf(str, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+      |                                                                                                                             ^
+../Core/Src/main.c:131:11: note: 'sprintf' output 101 bytes into a destination of size 100
+  131 |           sprintf(str, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "cv06_uart.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv06_uart\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv06_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv06_uart.elf
+ 
+arm-none-eabi-size  cv06_uart.elf 
+arm-none-eabi-objdump -h -S cv06_uart.elf  > "cv06_uart.list"
+   text	   data	    bss	    dec	    hex	filename
+  26248	     96	   3760	  30104	   7598	cv06_uart.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv06_uart.list
+ 
+17:13:46 **** Incremental Build of configuration Debug for project cv06_uart ****
+make -j12 all 
+arm-none-eabi-gcc "../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.d" -MT"Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "cv06_uart.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv06_uart\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv06_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv06_uart.elf
+ 
+arm-none-eabi-size  cv06_uart.elf 
+arm-none-eabi-objdump -h -S cv06_uart.elf  > "cv06_uart.list"
+   text	   data	    bss	    dec	    hex	filename
+  26244	     96	   3760	  30100	   7594	cv06_uart.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv06_uart.list
+ 
+17:16:15 **** Incremental Build of configuration Debug for project cv06_uart ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "cv06_uart.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv06_uart\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv06_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv06_uart.elf
+ 
+arm-none-eabi-size  cv06_uart.elf 
+arm-none-eabi-objdump -h -S cv06_uart.elf  > "cv06_uart.list"
+   text	   data	    bss	    dec	    hex	filename
+  26248	     96	   3760	  30104	   7598	cv06_uart.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv06_uart.list
+ 
+17:18:54 **** Incremental Build of configuration Debug for project cv06_uart ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "cv06_uart.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv06_uart\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv06_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv06_uart.elf
+ 
+arm-none-eabi-size  cv06_uart.elf 
+arm-none-eabi-objdump -h -S cv06_uart.elf  > "cv06_uart.list"
+   text	   data	    bss	    dec	    hex	filename
+  26248	     96	   3760	  30104	   7598	cv06_uart.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv06_uart.list
+ 
+17:22:15 **** Incremental Build of configuration Debug for project cv06_uart ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "cv06_uart.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv06_uart\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv06_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv06_uart.elf
+ 
+arm-none-eabi-size  cv06_uart.elf 
+arm-none-eabi-objdump -h -S cv06_uart.elf  > "cv06_uart.list"
+   text	   data	    bss	    dec	    hex	filename
+  26236	     96	   3760	  30092	   758c	cv06_uart.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv06_uart.list
+ 
+17:25:12 **** Incremental Build of configuration Debug for project cv06_uart ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "cv06_uart.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv06_uart\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv06_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv06_uart.elf
+ 
+arm-none-eabi-size  cv06_uart.elf 
+arm-none-eabi-objdump -h -S cv06_uart.elf  > "cv06_uart.list"
+   text	   data	    bss	    dec	    hex	filename
+  26236	     96	   3760	  30092	   758c	cv06_uart.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv06_uart.list
+ 
+17:29:54 **** Incremental Build of configuration Debug for project cv06_uart ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "cv06_uart.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv06_uart\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv06_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv06_uart.elf
+ 
+arm-none-eabi-size  cv06_uart.elf 
+arm-none-eabi-objdump -h -S cv06_uart.elf  > "cv06_uart.list"
+   text	   data	    bss	    dec	    hex	filename
+  26256	     96	   3760	  30112	   75a0	cv06_uart.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv06_uart.list
+ 
+17:32:04 **** Incremental Build of configuration Debug for project cv06_uart ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "cv06_uart.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv06_uart\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv06_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv06_uart.elf
+ 
+arm-none-eabi-size  cv06_uart.elf 
+arm-none-eabi-objdump -h -S cv06_uart.elf  > "cv06_uart.list"
+   text	   data	    bss	    dec	    hex	filename
+  26276	     96	   3760	  30132	   75b4	cv06_uart.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv06_uart.list
+ 
+17:35:27 **** Incremental Build of configuration Debug for project cv06_uart ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "cv06_uart.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv06_uart\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv06_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv06_uart.elf
+ 
+arm-none-eabi-size  cv06_uart.elf 
+arm-none-eabi-objdump -h -S cv06_uart.elf  > "cv06_uart.list"
+   text	   data	    bss	    dec	    hex	filename
+  26288	     96	   3760	  30144	   75c0	cv06_uart.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv06_uart.list
+ 
+17:37:15 **** Incremental Build of configuration Debug for project cv06_uart ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "cv06_uart.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv06_uart\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv06_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv06_uart.elf
+ 
+arm-none-eabi-size  cv06_uart.elf 
+arm-none-eabi-objdump -h -S cv06_uart.elf  > "cv06_uart.list"
+   text	   data	    bss	    dec	    hex	filename
+  26268	     96	   3760	  30124	   75ac	cv06_uart.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv06_uart.list
+ 
+17:41:15 **** Incremental Build of configuration Debug for project cv06_uart ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:119:116: warning: 'xkdmqwejzvbyluscfhotgnpraxmb...' directive writing 101 bytes into a region of size 100 [-Wformat-overflow=]
+  119 |   sprintf(str,"xkdmqwejzvbyluscfhotgnpraxmbtgfwcyzodslkejhvnupqairtmgxocdbzyvwnlkseqjfhurapxodcmgzytbnvkewsljqphurfa");
+      |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+../Core/Src/main.c:119:3: note: 'sprintf' output 102 bytes into a destination of size 100
+  119 |   sprintf(str,"xkdmqwejzvbyluscfhotgnpraxmbtgfwcyzodslkejhvnupqairtmgxocdbzyvwnlkseqjfhurapxodcmgzytbnvkewsljqphurfa");
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "cv06_uart.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv06_uart\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv06_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv06_uart.elf
+ 
+arm-none-eabi-size  cv06_uart.elf 
+arm-none-eabi-objdump -h -S cv06_uart.elf  > "cv06_uart.list"
+   text	   data	    bss	    dec	    hex	filename
+  26220	     92	   3876	  30188	   75ec	cv06_uart.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv06_uart.list
+ 
+17:43:36 **** Incremental Build of configuration Debug for project cv06_uart ****
+make -j12 all 
+arm-none-eabi-size  cv06_uart.elf 
+   text	   data	    bss	    dec	    hex	filename
+  26220	     92	   3876	  30188	   75ec	cv06_uart.elf
+Finished building: default.size.stdout
+ 
+17:45:09 **** Incremental Build of configuration Debug for project cv06_uart ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:119:116: warning: 'xkdmqwejzvbyluscfhotgnpraxmb...' directive writing 101 bytes into a region of size 100 [-Wformat-overflow=]
+  119 |   sprintf(str,"xkdmqwejzvbyluscfhotgnpraxmbtgfwcyzodslkejhvnupqairtmgxocdbzyvwnlkseqjfhurapxodcmgzytbnvkewsljqphurfa");
+      |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+../Core/Src/main.c:119:3: note: 'sprintf' output 102 bytes into a destination of size 100
+  119 |   sprintf(str,"xkdmqwejzvbyluscfhotgnpraxmbtgfwcyzodslkejhvnupqairtmgxocdbzyvwnlkseqjfhurapxodcmgzytbnvkewsljqphurfa");
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "cv06_uart.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv06_uart\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv06_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv06_uart.elf
+ 
+arm-none-eabi-size  cv06_uart.elf 
+arm-none-eabi-objdump -h -S cv06_uart.elf  > "cv06_uart.list"
+   text	   data	    bss	    dec	    hex	filename
+  26168	     92	   3876	  30136	   75b8	cv06_uart.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv06_uart.list
+ 
+16:27:31 **** Incremental Build of configuration Debug for project cv06_uart ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:255:13: error: invalid storage class for function 'MX_LPUART1_UART_Init'
+  255 | static void MX_LPUART1_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:303:13: error: invalid storage class for function 'MX_USART3_UART_Init'
+  303 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:351:13: error: invalid storage class for function 'MX_USB_OTG_FS_PCD_Init'
+  351 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:384:13: error: invalid storage class for function 'MX_DMA_Init'
+  384 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:406:13: error: invalid storage class for function 'MX_GPIO_Init'
+  406 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:474:1: error: expected declaration or statement at end of input
+  474 | }
+      | ^
+../Core/Src/main.c:125:21: warning: unused variable 'err' [-Wunused-variable]
+  125 |   HAL_StatusTypeDef err;
+      |                     ^~~
+../Core/Src/main.c:122:8: warning: unused variable 'type_of_transmit' [-Wunused-variable]
+  122 |   char type_of_transmit[15];
+      |        ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:121:12: warning: unused variable 'state' [-Wunused-variable]
+  121 |   uint32_t state = 1;
+      |            ^~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:65:13: warning: 'MX_GPIO_Init' used but never defined
+   65 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:66:13: warning: 'MX_DMA_Init' used but never defined
+   66 | static void MX_DMA_Init(void);
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:67:13: warning: 'MX_LPUART1_UART_Init' used but never defined
+   67 | static void MX_LPUART1_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:68:13: warning: 'MX_USART3_UART_Init' used but never defined
+   68 | static void MX_USART3_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:69:13: warning: 'MX_USB_OTG_FS_PCD_Init' used but never defined
+   69 | static void MX_USB_OTG_FS_PCD_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:465:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  465 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:406:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  406 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:384:13: warning: 'MX_DMA_Init' defined but not used [-Wunused-function]
+  384 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:351:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+  351 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:303:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+  303 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:255:13: warning: 'MX_LPUART1_UART_Init' defined but not used [-Wunused-function]
+  255 | static void MX_LPUART1_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:204:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  204 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+16:29:20 **** Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32l4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32l4xx_hal_msp.d" -MT"Core/Src/stm32l4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:297:13: error: invalid storage class for function 'MX_LPUART1_UART_Init'
+  297 | static void MX_LPUART1_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:345:13: error: invalid storage class for function 'MX_USART3_UART_Init'
+  345 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:393:13: error: invalid storage class for function 'MX_USB_OTG_FS_PCD_Init'
+  393 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:426:13: error: invalid storage class for function 'MX_DMA_Init'
+  426 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:448:13: error: invalid storage class for function 'MX_GPIO_Init'
+  448 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:526:1: error: expected declaration or statement at end of input
+  526 | }
+      | ^
+../Core/Src/main.c:133:8: warning: unused variable 'str' [-Wunused-variable]
+  133 |   char str[20];
+      |        ^~~
+../Core/Src/main.c:132:12: warning: unused variable 'cntr' [-Wunused-variable]
+  132 |   uint32_t cntr = 0;
+      |            ^~~~
+../Core/Src/main.c:130:12: warning: unused variable 'ButtonPressTime' [-Wunused-variable]
+  130 |   uint32_t ButtonPressTime;
+      |            ^~~~~~~~~~~~~~~
+../Core/Src/main.c:129:12: warning: unused variable 'RedLDPeriod' [-Wunused-variable]
+  129 |   uint32_t RedLDPeriod=500;
+      |            ^~~~~~~~~~~
+../Core/Src/main.c:128:12: warning: unused variable 'BlueLDPeriod' [-Wunused-variable]
+  128 |   uint32_t BlueLDPeriod=250;
+      |            ^~~~~~~~~~~~
+../Core/Src/main.c:127:8: warning: unused variable 'stav4' [-Wunused-variable]
+  127 |   bool stav4 = false;
+      |        ^~~~~
+../Core/Src/main.c:126:11: warning: unused variable 'state' [-Wunused-variable]
+  126 |   uint8_t state = 0;
+      |           ^~~~~
+../Core/Src/main.c:125:12: warning: unused variable 'tick' [-Wunused-variable]
+  125 |   uint32_t tick = 0;
+      |            ^~~~
+../Core/Src/main.c:124:12: warning: unused variable 'tickButtonPress' [-Wunused-variable]
+  124 |   uint32_t tickButtonPress= 0;
+      |            ^~~~~~~~~~~~~~~
+../Core/Src/main.c:123:12: warning: unused variable 'tickButton' [-Wunused-variable]
+  123 |   uint32_t tickButton = HAL_GetTick();
+      |            ^~~~~~~~~~
+../Core/Src/main.c:122:8: warning: unused variable 'RedBlinking' [-Wunused-variable]
+  122 |   bool RedBlinking = true;
+      |        ^~~~~~~~~~~
+../Core/Src/main.c:121:8: warning: unused variable 'button_state' [-Wunused-variable]
+  121 |   bool button_state = false;
+      |        ^~~~~~~~~~~~
+../Core/Src/main.c:120:12: warning: unused variable 'tickLedR' [-Wunused-variable]
+  120 |   uint32_t tickLedR = HAL_GetTick();
+      |            ^~~~~~~~
+../Core/Src/main.c:119:12: warning: unused variable 'tickLedB' [-Wunused-variable]
+  119 |   uint32_t tickLedB = HAL_GetTick();
+      |            ^~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:57:13: warning: 'MX_GPIO_Init' used but never defined
+   57 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:58:13: warning: 'MX_DMA_Init' used but never defined
+   58 | static void MX_DMA_Init(void);
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:59:13: warning: 'MX_LPUART1_UART_Init' used but never defined
+   59 | static void MX_LPUART1_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:60:13: warning: 'MX_USART3_UART_Init' used but never defined
+   60 | static void MX_USART3_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:61:13: warning: 'MX_USB_OTG_FS_PCD_Init' used but never defined
+   61 | static void MX_USB_OTG_FS_PCD_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:517:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  517 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:448:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  448 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:426:13: warning: 'MX_DMA_Init' defined but not used [-Wunused-function]
+  426 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:393:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+  393 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:345:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+  345 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:297:13: warning: 'MX_LPUART1_UART_Init' defined but not used [-Wunused-function]
+  297 | static void MX_LPUART1_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:246:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  246 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+16:31:41 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:133:8: warning: unused variable 'str' [-Wunused-variable]
+  133 |   char str[20];
+      |        ^~~
+../Core/Src/main.c:132:12: warning: unused variable 'cntr' [-Wunused-variable]
+  132 |   uint32_t cntr = 0;
+      |            ^~~~
+../Core/Src/main.c:130:12: warning: unused variable 'ButtonPressTime' [-Wunused-variable]
+  130 |   uint32_t ButtonPressTime;
+      |            ^~~~~~~~~~~~~~~
+../Core/Src/main.c:129:12: warning: unused variable 'RedLDPeriod' [-Wunused-variable]
+  129 |   uint32_t RedLDPeriod=500;
+      |            ^~~~~~~~~~~
+../Core/Src/main.c:128:12: warning: unused variable 'BlueLDPeriod' [-Wunused-variable]
+  128 |   uint32_t BlueLDPeriod=250;
+      |            ^~~~~~~~~~~~
+../Core/Src/main.c:127:8: warning: unused variable 'stav4' [-Wunused-variable]
+  127 |   bool stav4 = false;
+      |        ^~~~~
+../Core/Src/main.c:126:11: warning: unused variable 'state' [-Wunused-variable]
+  126 |   uint8_t state = 0;
+      |           ^~~~~
+../Core/Src/main.c:125:12: warning: unused variable 'tick' [-Wunused-variable]
+  125 |   uint32_t tick = 0;
+      |            ^~~~
+../Core/Src/main.c:124:12: warning: unused variable 'tickButtonPress' [-Wunused-variable]
+  124 |   uint32_t tickButtonPress= 0;
+      |            ^~~~~~~~~~~~~~~
+../Core/Src/main.c:123:12: warning: unused variable 'tickButton' [-Wunused-variable]
+  123 |   uint32_t tickButton = HAL_GetTick();
+      |            ^~~~~~~~~~
+../Core/Src/main.c:122:8: warning: unused variable 'RedBlinking' [-Wunused-variable]
+  122 |   bool RedBlinking = true;
+      |        ^~~~~~~~~~~
+../Core/Src/main.c:121:8: warning: unused variable 'button_state' [-Wunused-variable]
+  121 |   bool button_state = false;
+      |        ^~~~~~~~~~~~
+../Core/Src/main.c:120:12: warning: unused variable 'tickLedR' [-Wunused-variable]
+  120 |   uint32_t tickLedR = HAL_GetTick();
+      |            ^~~~~~~~
+../Core/Src/main.c:119:12: warning: unused variable 'tickLedB' [-Wunused-variable]
+  119 |   uint32_t tickLedB = HAL_GetTick();
+      |            ^~~~~~~~
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  21540	     12	   3316	  24868	   6124	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+16:33:43 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-size  cv2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21540	     12	   3316	  24868	   6124	cv2.elf
+Finished building: default.size.stdout
+ 
+16:35:10 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-size  cv2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21540	     12	   3316	  24868	   6124	cv2.elf
+Finished building: default.size.stdout
+ 
+16:48:11 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:151:51: error: switch quantity not an integer
+  151 |                                           switch (rxbuffer){
+      |                                                   ^~~~~~~~
+../Core/Src/main.c:152:48: warning: multi-character character constant [-Wmultichar]
+  152 |                                           case 'RON':
+      |                                                ^~~~~
+../Core/Src/main.c:155:48: warning: multi-character character constant [-Wmultichar]
+  155 |                                           case 'GON':
+      |                                                ^~~~~
+../Core/Src/main.c:158:48: warning: multi-character character constant [-Wmultichar]
+  158 |                                           case 'BON':
+      |                                                ^~~~~
+../Core/Src/main.c:161:48: warning: multi-character character constant [-Wmultichar]
+  161 |                                           case 'ROFF':
+      |                                                ^~~~~~
+../Core/Src/main.c:164:48: warning: multi-character character constant [-Wmultichar]
+  164 |                                           case 'BOFF':
+      |                                                ^~~~~~
+../Core/Src/main.c:167:48: warning: multi-character character constant [-Wmultichar]
+  167 |                                           case 'GOFF':
+      |                                                ^~~~~~
+../Core/Src/main.c:170:48: warning: character constant too long for its type
+  170 |                                           case 'RESET':
+      |                                                ^~~~~~~
+../Core/Src/main.c:171:91: warning: character constant too long for its type
+  171 |                                                   HAL_UART_Transmit(&hlpuart1, (uint8_t *)'Reset do stavu 1\n\r', 22, 100);
+      |                                                                                           ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:174:48: warning: multi-character character constant [-Wmultichar]
+  174 |                                           case 'BLIK':
+      |                                                ^~~~~~
+../Core/Src/main.c:175:51: error: 'period' undeclared (first use in this function)
+  175 |                                                   period = rxbuffer[-1];
+      |                                                   ^~~~~~
+../Core/Src/main.c:175:51: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:133:8: warning: unused variable 'str' [-Wunused-variable]
+  133 |   char str[20];
+      |        ^~~
+../Core/Src/main.c:132:12: warning: unused variable 'cntr' [-Wunused-variable]
+  132 |   uint32_t cntr = 0;
+      |            ^~~~
+../Core/Src/main.c:130:12: warning: unused variable 'ButtonPressTime' [-Wunused-variable]
+  130 |   uint32_t ButtonPressTime;
+      |            ^~~~~~~~~~~~~~~
+../Core/Src/main.c:129:12: warning: unused variable 'RedLDPeriod' [-Wunused-variable]
+  129 |   uint32_t RedLDPeriod=500;
+      |            ^~~~~~~~~~~
+../Core/Src/main.c:128:12: warning: unused variable 'BlueLDPeriod' [-Wunused-variable]
+  128 |   uint32_t BlueLDPeriod=250;
+      |            ^~~~~~~~~~~~
+../Core/Src/main.c:127:8: warning: unused variable 'stav4' [-Wunused-variable]
+  127 |   bool stav4 = false;
+      |        ^~~~~
+../Core/Src/main.c:126:11: warning: variable 'state' set but not used [-Wunused-but-set-variable]
+  126 |   uint8_t state = 0;
+      |           ^~~~~
+../Core/Src/main.c:125:12: warning: unused variable 'tick' [-Wunused-variable]
+  125 |   uint32_t tick = 0;
+      |            ^~~~
+../Core/Src/main.c:124:12: warning: unused variable 'tickButtonPress' [-Wunused-variable]
+  124 |   uint32_t tickButtonPress= 0;
+      |            ^~~~~~~~~~~~~~~
+../Core/Src/main.c:123:12: warning: unused variable 'tickButton' [-Wunused-variable]
+  123 |   uint32_t tickButton = HAL_GetTick();
+      |            ^~~~~~~~~~
+../Core/Src/main.c:122:8: warning: unused variable 'RedBlinking' [-Wunused-variable]
+  122 |   bool RedBlinking = true;
+      |        ^~~~~~~~~~~
+../Core/Src/main.c:121:8: warning: unused variable 'button_state' [-Wunused-variable]
+  121 |   bool button_state = false;
+      |        ^~~~~~~~~~~~
+../Core/Src/main.c:120:12: warning: unused variable 'tickLedR' [-Wunused-variable]
+  120 |   uint32_t tickLedR = HAL_GetTick();
+      |            ^~~~~~~~
+../Core/Src/main.c:119:12: warning: unused variable 'tickLedB' [-Wunused-variable]
+  119 |   uint32_t tickLedB = HAL_GetTick();
+      |            ^~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+16:52:49 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'handle_command':
+../Core/Src/main.c:96:9: error: 'state' undeclared (first use in this function)
+   96 |         state = 0;
+      |         ^~~~~
+../Core/Src/main.c:96:9: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:179:58: warning: passing argument 1 of 'handle_command' from incompatible pointer type [-Wincompatible-pointer-types]
+  179 |                                           handle_command(&rxbuffer);
+      |                                                          ^~~~~~~~~
+      |                                                          |
+      |                                                          char (*)[10]
+../Core/Src/main.c:74:27: note: expected 'char *' but argument is of type 'char (*)[10]'
+   74 | void handle_command(char *rxbuffer) {
+      |                     ~~~~~~^~~~~~~~
+../Core/Src/main.c:161:8: warning: unused variable 'str' [-Wunused-variable]
+  161 |   char str[20];
+      |        ^~~
+../Core/Src/main.c:160:12: warning: unused variable 'cntr' [-Wunused-variable]
+  160 |   uint32_t cntr = 0;
+      |            ^~~~
+../Core/Src/main.c:158:12: warning: unused variable 'ButtonPressTime' [-Wunused-variable]
+  158 |   uint32_t ButtonPressTime;
+      |            ^~~~~~~~~~~~~~~
+../Core/Src/main.c:157:12: warning: unused variable 'RedLDPeriod' [-Wunused-variable]
+  157 |   uint32_t RedLDPeriod=500;
+      |            ^~~~~~~~~~~
+../Core/Src/main.c:156:12: warning: unused variable 'BlueLDPeriod' [-Wunused-variable]
+  156 |   uint32_t BlueLDPeriod=250;
+      |            ^~~~~~~~~~~~
+../Core/Src/main.c:155:8: warning: unused variable 'stav4' [-Wunused-variable]
+  155 |   bool stav4 = false;
+      |        ^~~~~
+../Core/Src/main.c:154:11: warning: unused variable 'state' [-Wunused-variable]
+  154 |   uint8_t state = 0;
+      |           ^~~~~
+../Core/Src/main.c:153:12: warning: unused variable 'tick' [-Wunused-variable]
+  153 |   uint32_t tick = 0;
+      |            ^~~~
+../Core/Src/main.c:152:12: warning: unused variable 'tickButtonPress' [-Wunused-variable]
+  152 |   uint32_t tickButtonPress= 0;
+      |            ^~~~~~~~~~~~~~~
+../Core/Src/main.c:151:12: warning: unused variable 'tickButton' [-Wunused-variable]
+  151 |   uint32_t tickButton = HAL_GetTick();
+      |            ^~~~~~~~~~
+../Core/Src/main.c:150:8: warning: unused variable 'RedBlinking' [-Wunused-variable]
+  150 |   bool RedBlinking = true;
+      |        ^~~~~~~~~~~
+../Core/Src/main.c:149:8: warning: unused variable 'button_state' [-Wunused-variable]
+  149 |   bool button_state = false;
+      |        ^~~~~~~~~~~~
+../Core/Src/main.c:148:12: warning: unused variable 'tickLedR' [-Wunused-variable]
+  148 |   uint32_t tickLedR = HAL_GetTick();
+      |            ^~~~~~~~
+../Core/Src/main.c:147:12: warning: unused variable 'tickLedB' [-Wunused-variable]
+  147 |   uint32_t tickLedB = HAL_GetTick();
+      |            ^~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+16:53:24 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:180:58: warning: passing argument 1 of 'handle_command' from incompatible pointer type [-Wincompatible-pointer-types]
+  180 |                                           handle_command(&rxbuffer);
+      |                                                          ^~~~~~~~~
+      |                                                          |
+      |                                                          char (*)[10]
+../Core/Src/main.c:75:27: note: expected 'char *' but argument is of type 'char (*)[10]'
+   75 | void handle_command(char *rxbuffer) {
+      |                     ~~~~~~^~~~~~~~
+../Core/Src/main.c:162:8: warning: unused variable 'str' [-Wunused-variable]
+  162 |   char str[20];
+      |        ^~~
+../Core/Src/main.c:161:12: warning: unused variable 'cntr' [-Wunused-variable]
+  161 |   uint32_t cntr = 0;
+      |            ^~~~
+../Core/Src/main.c:159:12: warning: unused variable 'ButtonPressTime' [-Wunused-variable]
+  159 |   uint32_t ButtonPressTime;
+      |            ^~~~~~~~~~~~~~~
+../Core/Src/main.c:158:12: warning: unused variable 'RedLDPeriod' [-Wunused-variable]
+  158 |   uint32_t RedLDPeriod=500;
+      |            ^~~~~~~~~~~
+../Core/Src/main.c:157:12: warning: unused variable 'BlueLDPeriod' [-Wunused-variable]
+  157 |   uint32_t BlueLDPeriod=250;
+      |            ^~~~~~~~~~~~
+../Core/Src/main.c:156:8: warning: unused variable 'stav4' [-Wunused-variable]
+  156 |   bool stav4 = false;
+      |        ^~~~~
+../Core/Src/main.c:155:11: warning: unused variable 'state' [-Wunused-variable]
+  155 |   uint8_t state = 0;
+      |           ^~~~~
+../Core/Src/main.c:154:12: warning: unused variable 'tick' [-Wunused-variable]
+  154 |   uint32_t tick = 0;
+      |            ^~~~
+../Core/Src/main.c:153:12: warning: unused variable 'tickButtonPress' [-Wunused-variable]
+  153 |   uint32_t tickButtonPress= 0;
+      |            ^~~~~~~~~~~~~~~
+../Core/Src/main.c:152:12: warning: unused variable 'tickButton' [-Wunused-variable]
+  152 |   uint32_t tickButton = HAL_GetTick();
+      |            ^~~~~~~~~~
+../Core/Src/main.c:151:8: warning: unused variable 'RedBlinking' [-Wunused-variable]
+  151 |   bool RedBlinking = true;
+      |        ^~~~~~~~~~~
+../Core/Src/main.c:150:8: warning: unused variable 'button_state' [-Wunused-variable]
+  150 |   bool button_state = false;
+      |        ^~~~~~~~~~~~
+../Core/Src/main.c:149:12: warning: unused variable 'tickLedR' [-Wunused-variable]
+  149 |   uint32_t tickLedR = HAL_GetTick();
+      |            ^~~~~~~~
+../Core/Src/main.c:148:12: warning: unused variable 'tickLedB' [-Wunused-variable]
+  148 |   uint32_t tickLedB = HAL_GetTick();
+      |            ^~~~~~~~
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  22028	     16	   3320	  25364	   6314	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+16:53:50 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:162:8: warning: unused variable 'str' [-Wunused-variable]
+  162 |   char str[20];
+      |        ^~~
+../Core/Src/main.c:161:12: warning: unused variable 'cntr' [-Wunused-variable]
+  161 |   uint32_t cntr = 0;
+      |            ^~~~
+../Core/Src/main.c:159:12: warning: unused variable 'ButtonPressTime' [-Wunused-variable]
+  159 |   uint32_t ButtonPressTime;
+      |            ^~~~~~~~~~~~~~~
+../Core/Src/main.c:158:12: warning: unused variable 'RedLDPeriod' [-Wunused-variable]
+  158 |   uint32_t RedLDPeriod=500;
+      |            ^~~~~~~~~~~
+../Core/Src/main.c:157:12: warning: unused variable 'BlueLDPeriod' [-Wunused-variable]
+  157 |   uint32_t BlueLDPeriod=250;
+      |            ^~~~~~~~~~~~
+../Core/Src/main.c:156:8: warning: unused variable 'stav4' [-Wunused-variable]
+  156 |   bool stav4 = false;
+      |        ^~~~~
+../Core/Src/main.c:155:11: warning: unused variable 'state' [-Wunused-variable]
+  155 |   uint8_t state = 0;
+      |           ^~~~~
+../Core/Src/main.c:154:12: warning: unused variable 'tick' [-Wunused-variable]
+  154 |   uint32_t tick = 0;
+      |            ^~~~
+../Core/Src/main.c:153:12: warning: unused variable 'tickButtonPress' [-Wunused-variable]
+  153 |   uint32_t tickButtonPress= 0;
+      |            ^~~~~~~~~~~~~~~
+../Core/Src/main.c:152:12: warning: unused variable 'tickButton' [-Wunused-variable]
+  152 |   uint32_t tickButton = HAL_GetTick();
+      |            ^~~~~~~~~~
+../Core/Src/main.c:151:8: warning: unused variable 'RedBlinking' [-Wunused-variable]
+  151 |   bool RedBlinking = true;
+      |        ^~~~~~~~~~~
+../Core/Src/main.c:150:8: warning: unused variable 'button_state' [-Wunused-variable]
+  150 |   bool button_state = false;
+      |        ^~~~~~~~~~~~
+../Core/Src/main.c:149:12: warning: unused variable 'tickLedR' [-Wunused-variable]
+  149 |   uint32_t tickLedR = HAL_GetTick();
+      |            ^~~~~~~~
+../Core/Src/main.c:148:12: warning: unused variable 'tickLedB' [-Wunused-variable]
+  148 |   uint32_t tickLedB = HAL_GetTick();
+      |            ^~~~~~~~
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  22028	     16	   3320	  25364	   6314	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+16:57:28 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:159:8: warning: unused variable 'str' [-Wunused-variable]
+  159 |   char str[20];
+      |        ^~~
+../Core/Src/main.c:158:12: warning: unused variable 'cntr' [-Wunused-variable]
+  158 |   uint32_t cntr = 0;
+      |            ^~~~
+../Core/Src/main.c:156:12: warning: unused variable 'ButtonPressTime' [-Wunused-variable]
+  156 |   uint32_t ButtonPressTime;
+      |            ^~~~~~~~~~~~~~~
+../Core/Src/main.c:155:12: warning: unused variable 'RedLDPeriod' [-Wunused-variable]
+  155 |   uint32_t RedLDPeriod=500;
+      |            ^~~~~~~~~~~
+../Core/Src/main.c:154:12: warning: unused variable 'BlueLDPeriod' [-Wunused-variable]
+  154 |   uint32_t BlueLDPeriod=250;
+      |            ^~~~~~~~~~~~
+../Core/Src/main.c:153:8: warning: unused variable 'stav4' [-Wunused-variable]
+  153 |   bool stav4 = false;
+      |        ^~~~~
+../Core/Src/main.c:152:11: warning: unused variable 'state' [-Wunused-variable]
+  152 |   uint8_t state = 0;
+      |           ^~~~~
+../Core/Src/main.c:151:12: warning: unused variable 'tick' [-Wunused-variable]
+  151 |   uint32_t tick = 0;
+      |            ^~~~
+../Core/Src/main.c:150:12: warning: unused variable 'tickButtonPress' [-Wunused-variable]
+  150 |   uint32_t tickButtonPress= 0;
+      |            ^~~~~~~~~~~~~~~
+../Core/Src/main.c:149:12: warning: unused variable 'tickButton' [-Wunused-variable]
+  149 |   uint32_t tickButton = HAL_GetTick();
+      |            ^~~~~~~~~~
+../Core/Src/main.c:148:8: warning: unused variable 'RedBlinking' [-Wunused-variable]
+  148 |   bool RedBlinking = true;
+      |        ^~~~~~~~~~~
+../Core/Src/main.c:147:8: warning: unused variable 'button_state' [-Wunused-variable]
+  147 |   bool button_state = false;
+      |        ^~~~~~~~~~~~
+../Core/Src/main.c:146:12: warning: unused variable 'tickLedR' [-Wunused-variable]
+  146 |   uint32_t tickLedR = HAL_GetTick();
+      |            ^~~~~~~~
+../Core/Src/main.c:145:12: warning: unused variable 'tickLedB' [-Wunused-variable]
+  145 |   uint32_t tickLedB = HAL_GetTick();
+      |            ^~~~~~~~
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  22004	     16	   3320	  25340	   62fc	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+16:59:16 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:177:58: warning: passing argument 1 of 'handle_command' makes pointer from integer without a cast [-Wint-conversion]
+  177 |                                           handle_command(*rxbuffer);
+      |                                                          ^~~~~~~~~
+      |                                                          |
+      |                                                          char
+../Core/Src/main.c:75:27: note: expected 'char *' but argument is of type 'char'
+   75 | void handle_command(char *rxbuffer) {
+      |                     ~~~~~~^~~~~~~~
+../Core/Src/main.c:159:8: warning: unused variable 'str' [-Wunused-variable]
+  159 |   char str[20];
+      |        ^~~
+../Core/Src/main.c:158:12: warning: unused variable 'cntr' [-Wunused-variable]
+  158 |   uint32_t cntr = 0;
+      |            ^~~~
+../Core/Src/main.c:156:12: warning: unused variable 'ButtonPressTime' [-Wunused-variable]
+  156 |   uint32_t ButtonPressTime;
+      |            ^~~~~~~~~~~~~~~
+../Core/Src/main.c:155:12: warning: unused variable 'RedLDPeriod' [-Wunused-variable]
+  155 |   uint32_t RedLDPeriod=500;
+      |            ^~~~~~~~~~~
+../Core/Src/main.c:154:12: warning: unused variable 'BlueLDPeriod' [-Wunused-variable]
+  154 |   uint32_t BlueLDPeriod=250;
+      |            ^~~~~~~~~~~~
+../Core/Src/main.c:153:8: warning: unused variable 'stav4' [-Wunused-variable]
+  153 |   bool stav4 = false;
+      |        ^~~~~
+../Core/Src/main.c:152:11: warning: unused variable 'state' [-Wunused-variable]
+  152 |   uint8_t state = 0;
+      |           ^~~~~
+../Core/Src/main.c:151:12: warning: unused variable 'tick' [-Wunused-variable]
+  151 |   uint32_t tick = 0;
+      |            ^~~~
+../Core/Src/main.c:150:12: warning: unused variable 'tickButtonPress' [-Wunused-variable]
+  150 |   uint32_t tickButtonPress= 0;
+      |            ^~~~~~~~~~~~~~~
+../Core/Src/main.c:149:12: warning: unused variable 'tickButton' [-Wunused-variable]
+  149 |   uint32_t tickButton = HAL_GetTick();
+      |            ^~~~~~~~~~
+../Core/Src/main.c:148:8: warning: unused variable 'RedBlinking' [-Wunused-variable]
+  148 |   bool RedBlinking = true;
+      |        ^~~~~~~~~~~
+../Core/Src/main.c:147:8: warning: unused variable 'button_state' [-Wunused-variable]
+  147 |   bool button_state = false;
+      |        ^~~~~~~~~~~~
+../Core/Src/main.c:146:12: warning: unused variable 'tickLedR' [-Wunused-variable]
+  146 |   uint32_t tickLedR = HAL_GetTick();
+      |            ^~~~~~~~
+../Core/Src/main.c:145:12: warning: unused variable 'tickLedB' [-Wunused-variable]
+  145 |   uint32_t tickLedB = HAL_GetTick();
+      |            ^~~~~~~~
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  22004	     16	   3320	  25340	   62fc	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+17:01:54 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:159:8: warning: unused variable 'str' [-Wunused-variable]
+  159 |   char str[20];
+      |        ^~~
+../Core/Src/main.c:158:12: warning: unused variable 'cntr' [-Wunused-variable]
+  158 |   uint32_t cntr = 0;
+      |            ^~~~
+../Core/Src/main.c:156:12: warning: unused variable 'ButtonPressTime' [-Wunused-variable]
+  156 |   uint32_t ButtonPressTime;
+      |            ^~~~~~~~~~~~~~~
+../Core/Src/main.c:155:12: warning: unused variable 'RedLDPeriod' [-Wunused-variable]
+  155 |   uint32_t RedLDPeriod=500;
+      |            ^~~~~~~~~~~
+../Core/Src/main.c:154:12: warning: unused variable 'BlueLDPeriod' [-Wunused-variable]
+  154 |   uint32_t BlueLDPeriod=250;
+      |            ^~~~~~~~~~~~
+../Core/Src/main.c:153:8: warning: unused variable 'stav4' [-Wunused-variable]
+  153 |   bool stav4 = false;
+      |        ^~~~~
+../Core/Src/main.c:152:11: warning: unused variable 'state' [-Wunused-variable]
+  152 |   uint8_t state = 0;
+      |           ^~~~~
+../Core/Src/main.c:151:12: warning: unused variable 'tick' [-Wunused-variable]
+  151 |   uint32_t tick = 0;
+      |            ^~~~
+../Core/Src/main.c:150:12: warning: unused variable 'tickButtonPress' [-Wunused-variable]
+  150 |   uint32_t tickButtonPress= 0;
+      |            ^~~~~~~~~~~~~~~
+../Core/Src/main.c:149:12: warning: unused variable 'tickButton' [-Wunused-variable]
+  149 |   uint32_t tickButton = HAL_GetTick();
+      |            ^~~~~~~~~~
+../Core/Src/main.c:148:8: warning: unused variable 'RedBlinking' [-Wunused-variable]
+  148 |   bool RedBlinking = true;
+      |        ^~~~~~~~~~~
+../Core/Src/main.c:147:8: warning: unused variable 'button_state' [-Wunused-variable]
+  147 |   bool button_state = false;
+      |        ^~~~~~~~~~~~
+../Core/Src/main.c:146:12: warning: unused variable 'tickLedR' [-Wunused-variable]
+  146 |   uint32_t tickLedR = HAL_GetTick();
+      |            ^~~~~~~~
+../Core/Src/main.c:145:12: warning: unused variable 'tickLedB' [-Wunused-variable]
+  145 |   uint32_t tickLedB = HAL_GetTick();
+      |            ^~~~~~~~
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  22020	     16	   3320	  25356	   630c	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+17:05:06 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:83:5: warning: implicit declaration of function 'SystemClock_Config'; did you mean 'SysTick_Config'? [-Wimplicit-function-declaration]
+   83 |     SystemClock_Config();
+      |     ^~~~~~~~~~~~~~~~~~
+      |     SysTick_Config
+../Core/Src/main.c:86:5: warning: implicit declaration of function 'MX_GPIO_Init'; did you mean 'HAL_GPIO_Init'? [-Wimplicit-function-declaration]
+   86 |     MX_GPIO_Init();
+      |     ^~~~~~~~~~~~
+      |     HAL_GPIO_Init
+../Core/Src/main.c:87:5: warning: implicit declaration of function 'MX_DMA_Init'; did you mean 'HAL_DMA_Init'? [-Wimplicit-function-declaration]
+   87 |     MX_DMA_Init();
+      |     ^~~~~~~~~~~
+      |     HAL_DMA_Init
+../Core/Src/main.c:88:5: warning: implicit declaration of function 'MX_LPUART1_UART_Init' [-Wimplicit-function-declaration]
+   88 |     MX_LPUART1_UART_Init();
+      |     ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:89:5: warning: implicit declaration of function 'MX_USART3_UART_Init' [-Wimplicit-function-declaration]
+   89 |     MX_USART3_UART_Init();
+      |     ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:90:5: warning: implicit declaration of function 'MX_USB_OTG_FS_PCD_Init' [-Wimplicit-function-declaration]
+   90 |     MX_USB_OTG_FS_PCD_Init();
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:112:10: warning: unused variable 'str' [-Wunused-variable]
+  112 |     char str[20];
+      |          ^~~
+../Core/Src/main.c:111:14: warning: unused variable 'cntr' [-Wunused-variable]
+  111 |     uint32_t cntr = 0;
+      |              ^~~~
+../Core/Src/main.c:110:14: warning: variable 'ButtonPressTime' set but not used [-Wunused-but-set-variable]
+  110 |     uint32_t ButtonPressTime;
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:177:6: warning: conflicting types for 'SystemClock_Config'; have 'void(void)'
+  177 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:83:5: note: previous implicit declaration of 'SystemClock_Config' with type 'void(void)'
+   83 |     SystemClock_Config();
+      |     ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:228:13: warning: conflicting types for 'MX_LPUART1_UART_Init'; have 'void(void)'
+  228 | static void MX_LPUART1_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:228:13: error: static declaration of 'MX_LPUART1_UART_Init' follows non-static declaration
+../Core/Src/main.c:88:5: note: previous implicit declaration of 'MX_LPUART1_UART_Init' with type 'void(void)'
+   88 |     MX_LPUART1_UART_Init();
+      |     ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:276:13: warning: conflicting types for 'MX_USART3_UART_Init'; have 'void(void)'
+  276 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:276:13: error: static declaration of 'MX_USART3_UART_Init' follows non-static declaration
+../Core/Src/main.c:89:5: note: previous implicit declaration of 'MX_USART3_UART_Init' with type 'void(void)'
+   89 |     MX_USART3_UART_Init();
+      |     ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:324:13: warning: conflicting types for 'MX_USB_OTG_FS_PCD_Init'; have 'void(void)'
+  324 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:324:13: error: static declaration of 'MX_USB_OTG_FS_PCD_Init' follows non-static declaration
+../Core/Src/main.c:90:5: note: previous implicit declaration of 'MX_USB_OTG_FS_PCD_Init' with type 'void(void)'
+   90 |     MX_USB_OTG_FS_PCD_Init();
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:357:13: warning: conflicting types for 'MX_DMA_Init'; have 'void(void)'
+  357 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:357:13: error: static declaration of 'MX_DMA_Init' follows non-static declaration
+../Core/Src/main.c:87:5: note: previous implicit declaration of 'MX_DMA_Init' with type 'void(void)'
+   87 |     MX_DMA_Init();
+      |     ^~~~~~~~~~~
+../Core/Src/main.c:379:13: warning: conflicting types for 'MX_GPIO_Init'; have 'void(void)'
+  379 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:379:13: error: static declaration of 'MX_GPIO_Init' follows non-static declaration
+../Core/Src/main.c:86:5: note: previous implicit declaration of 'MX_GPIO_Init' with type 'void(void)'
+   86 |     MX_GPIO_Init();
+      |     ^~~~~~~~~~~~
+../Core/Src/main.c:379:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  379 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:357:13: warning: 'MX_DMA_Init' defined but not used [-Wunused-function]
+  357 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:324:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+  324 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:276:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+  276 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:228:13: warning: 'MX_LPUART1_UART_Init' defined but not used [-Wunused-function]
+  228 | static void MX_LPUART1_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+17:05:25 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:83:5: warning: implicit declaration of function 'SystemClock_Config'; did you mean 'SysTick_Config'? [-Wimplicit-function-declaration]
+   83 |     SystemClock_Config();
+      |     ^~~~~~~~~~~~~~~~~~
+      |     SysTick_Config
+../Core/Src/main.c:86:5: warning: implicit declaration of function 'MX_GPIO_Init'; did you mean 'HAL_GPIO_Init'? [-Wimplicit-function-declaration]
+   86 |     MX_GPIO_Init();
+      |     ^~~~~~~~~~~~
+      |     HAL_GPIO_Init
+../Core/Src/main.c:87:5: warning: implicit declaration of function 'MX_DMA_Init'; did you mean 'HAL_DMA_Init'? [-Wimplicit-function-declaration]
+   87 |     MX_DMA_Init();
+      |     ^~~~~~~~~~~
+      |     HAL_DMA_Init
+../Core/Src/main.c:88:5: warning: implicit declaration of function 'MX_LPUART1_UART_Init' [-Wimplicit-function-declaration]
+   88 |     MX_LPUART1_UART_Init();
+      |     ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:89:5: warning: implicit declaration of function 'MX_USART3_UART_Init' [-Wimplicit-function-declaration]
+   89 |     MX_USART3_UART_Init();
+      |     ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:90:5: warning: implicit declaration of function 'MX_USB_OTG_FS_PCD_Init' [-Wimplicit-function-declaration]
+   90 |     MX_USB_OTG_FS_PCD_Init();
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:112:10: warning: unused variable 'str' [-Wunused-variable]
+  112 |     char str[20];
+      |          ^~~
+../Core/Src/main.c:111:14: warning: unused variable 'cntr' [-Wunused-variable]
+  111 |     uint32_t cntr = 0;
+      |              ^~~~
+../Core/Src/main.c:110:14: warning: variable 'ButtonPressTime' set but not used [-Wunused-but-set-variable]
+  110 |     uint32_t ButtonPressTime;
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:171:1: error: expected identifier or '(' before '}' token
+  171 | }
+      | ^
+../Core/Src/main.c:177:6: warning: conflicting types for 'SystemClock_Config'; have 'void(void)'
+  177 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:83:5: note: previous implicit declaration of 'SystemClock_Config' with type 'void(void)'
+   83 |     SystemClock_Config();
+      |     ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:228:13: warning: conflicting types for 'MX_LPUART1_UART_Init'; have 'void(void)'
+  228 | static void MX_LPUART1_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:228:13: error: static declaration of 'MX_LPUART1_UART_Init' follows non-static declaration
+../Core/Src/main.c:88:5: note: previous implicit declaration of 'MX_LPUART1_UART_Init' with type 'void(void)'
+   88 |     MX_LPUART1_UART_Init();
+      |     ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:276:13: warning: conflicting types for 'MX_USART3_UART_Init'; have 'void(void)'
+  276 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:276:13: error: static declaration of 'MX_USART3_UART_Init' follows non-static declaration
+../Core/Src/main.c:89:5: note: previous implicit declaration of 'MX_USART3_UART_Init' with type 'void(void)'
+   89 |     MX_USART3_UART_Init();
+      |     ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:324:13: warning: conflicting types for 'MX_USB_OTG_FS_PCD_Init'; have 'void(void)'
+  324 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:324:13: error: static declaration of 'MX_USB_OTG_FS_PCD_Init' follows non-static declaration
+../Core/Src/main.c:90:5: note: previous implicit declaration of 'MX_USB_OTG_FS_PCD_Init' with type 'void(void)'
+   90 |     MX_USB_OTG_FS_PCD_Init();
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:357:13: warning: conflicting types for 'MX_DMA_Init'; have 'void(void)'
+  357 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:357:13: error: static declaration of 'MX_DMA_Init' follows non-static declaration
+../Core/Src/main.c:87:5: note: previous implicit declaration of 'MX_DMA_Init' with type 'void(void)'
+   87 |     MX_DMA_Init();
+      |     ^~~~~~~~~~~
+../Core/Src/main.c:379:13: warning: conflicting types for 'MX_GPIO_Init'; have 'void(void)'
+  379 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:379:13: error: static declaration of 'MX_GPIO_Init' follows non-static declaration
+../Core/Src/main.c:86:5: note: previous implicit declaration of 'MX_GPIO_Init' with type 'void(void)'
+   86 |     MX_GPIO_Init();
+      |     ^~~~~~~~~~~~
+../Core/Src/main.c:379:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  379 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:357:13: warning: 'MX_DMA_Init' defined but not used [-Wunused-function]
+  357 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:324:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+  324 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:276:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+  276 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:228:13: warning: 'MX_LPUART1_UART_Init' defined but not used [-Wunused-function]
+  228 | static void MX_LPUART1_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+17:05:57 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:83:5: warning: implicit declaration of function 'SystemClock_Config'; did you mean 'SysTick_Config'? [-Wimplicit-function-declaration]
+   83 |     SystemClock_Config();
+      |     ^~~~~~~~~~~~~~~~~~
+      |     SysTick_Config
+../Core/Src/main.c:86:5: warning: implicit declaration of function 'MX_GPIO_Init'; did you mean 'HAL_GPIO_Init'? [-Wimplicit-function-declaration]
+   86 |     MX_GPIO_Init();
+      |     ^~~~~~~~~~~~
+      |     HAL_GPIO_Init
+../Core/Src/main.c:87:5: warning: implicit declaration of function 'MX_DMA_Init'; did you mean 'HAL_DMA_Init'? [-Wimplicit-function-declaration]
+   87 |     MX_DMA_Init();
+      |     ^~~~~~~~~~~
+      |     HAL_DMA_Init
+../Core/Src/main.c:88:5: warning: implicit declaration of function 'MX_LPUART1_UART_Init' [-Wimplicit-function-declaration]
+   88 |     MX_LPUART1_UART_Init();
+      |     ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:89:5: warning: implicit declaration of function 'MX_USART3_UART_Init' [-Wimplicit-function-declaration]
+   89 |     MX_USART3_UART_Init();
+      |     ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:90:5: warning: implicit declaration of function 'MX_USB_OTG_FS_PCD_Init' [-Wimplicit-function-declaration]
+   90 |     MX_USB_OTG_FS_PCD_Init();
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:112:10: warning: unused variable 'str' [-Wunused-variable]
+  112 |     char str[20];
+      |          ^~~
+../Core/Src/main.c:111:14: warning: unused variable 'cntr' [-Wunused-variable]
+  111 |     uint32_t cntr = 0;
+      |              ^~~~
+../Core/Src/main.c:110:14: warning: variable 'ButtonPressTime' set but not used [-Wunused-but-set-variable]
+  110 |     uint32_t ButtonPressTime;
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:176:6: warning: conflicting types for 'SystemClock_Config'; have 'void(void)'
+  176 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:83:5: note: previous implicit declaration of 'SystemClock_Config' with type 'void(void)'
+   83 |     SystemClock_Config();
+      |     ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:227:13: warning: conflicting types for 'MX_LPUART1_UART_Init'; have 'void(void)'
+  227 | static void MX_LPUART1_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:227:13: error: static declaration of 'MX_LPUART1_UART_Init' follows non-static declaration
+../Core/Src/main.c:88:5: note: previous implicit declaration of 'MX_LPUART1_UART_Init' with type 'void(void)'
+   88 |     MX_LPUART1_UART_Init();
+      |     ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:275:13: warning: conflicting types for 'MX_USART3_UART_Init'; have 'void(void)'
+  275 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:275:13: error: static declaration of 'MX_USART3_UART_Init' follows non-static declaration
+../Core/Src/main.c:89:5: note: previous implicit declaration of 'MX_USART3_UART_Init' with type 'void(void)'
+   89 |     MX_USART3_UART_Init();
+      |     ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:323:13: warning: conflicting types for 'MX_USB_OTG_FS_PCD_Init'; have 'void(void)'
+  323 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:323:13: error: static declaration of 'MX_USB_OTG_FS_PCD_Init' follows non-static declaration
+../Core/Src/main.c:90:5: note: previous implicit declaration of 'MX_USB_OTG_FS_PCD_Init' with type 'void(void)'
+   90 |     MX_USB_OTG_FS_PCD_Init();
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:356:13: warning: conflicting types for 'MX_DMA_Init'; have 'void(void)'
+  356 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:356:13: error: static declaration of 'MX_DMA_Init' follows non-static declaration
+../Core/Src/main.c:87:5: note: previous implicit declaration of 'MX_DMA_Init' with type 'void(void)'
+   87 |     MX_DMA_Init();
+      |     ^~~~~~~~~~~
+../Core/Src/main.c:378:13: warning: conflicting types for 'MX_GPIO_Init'; have 'void(void)'
+  378 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:378:13: error: static declaration of 'MX_GPIO_Init' follows non-static declaration
+../Core/Src/main.c:86:5: note: previous implicit declaration of 'MX_GPIO_Init' with type 'void(void)'
+   86 |     MX_GPIO_Init();
+      |     ^~~~~~~~~~~~
+../Core/Src/main.c:378:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  378 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:356:13: warning: 'MX_DMA_Init' defined but not used [-Wunused-function]
+  356 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:323:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+  323 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:275:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+  275 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:227:13: warning: 'MX_LPUART1_UART_Init' defined but not used [-Wunused-function]
+  227 | static void MX_LPUART1_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+17:08:13 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:146:55: error: 'rxbuffer' undeclared (first use in this function)
+  146 |           if (HAL_UART_Receive(&hlpuart1, (uint8_t *)&rxbuffer[rxpos], 1, 0) == HAL_OK) {
+      |                                                       ^~~~~~~~
+../Core/Src/main.c:146:55: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:146:64: error: 'rxpos' undeclared (first use in this function)
+  146 |           if (HAL_UART_Receive(&hlpuart1, (uint8_t *)&rxbuffer[rxpos], 1, 0) == HAL_OK) {
+      |                                                                ^~~~~
+../Core/Src/main.c:142:12: warning: unused variable 'str' [-Wunused-variable]
+  142 |       char str[20];
+      |            ^~~
+../Core/Src/main.c:141:16: warning: unused variable 'cntr' [-Wunused-variable]
+  141 |       uint32_t cntr = 0;
+      |                ^~~~
+../Core/Src/main.c:140:16: warning: variable 'ButtonPressTime' set but not used [-Wunused-but-set-variable]
+  140 |       uint32_t ButtonPressTime;
+      |                ^~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+17:08:42 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:144:12: warning: unused variable 'str' [-Wunused-variable]
+  144 |       char str[20];
+      |            ^~~
+../Core/Src/main.c:143:16: warning: unused variable 'cntr' [-Wunused-variable]
+  143 |       uint32_t cntr = 0;
+      |                ^~~~
+../Core/Src/main.c:142:16: warning: variable 'ButtonPressTime' set but not used [-Wunused-but-set-variable]
+  142 |       uint32_t ButtonPressTime;
+      |                ^~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  22392	     16	   3328	  25736	   6488	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+17:14:07 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:144:12: warning: unused variable 'str' [-Wunused-variable]
+  144 |       char str[20];
+      |            ^~~
+../Core/Src/main.c:143:16: warning: unused variable 'cntr' [-Wunused-variable]
+  143 |       uint32_t cntr = 0;
+      |                ^~~~
+../Core/Src/main.c:142:16: warning: unused variable 'ButtonPressTime' [-Wunused-variable]
+  142 |       uint32_t ButtonPressTime;
+      |                ^~~~~~~~~~~~~~~
+../Core/Src/main.c:139:12: warning: unused variable 'stav4' [-Wunused-variable]
+  139 |       bool stav4 = false;
+      |            ^~~~~
+../Core/Src/main.c:137:16: warning: unused variable 'tick' [-Wunused-variable]
+  137 |       uint32_t tick = 0;
+      |                ^~~~
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  22528	     16	   3328	  25872	   6510	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+17:21:19 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:196:35: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  196 |                                   sprintf(str, "Perioda blikani \r\n", cntr++);
+      |                                   ^~~~~~~
+../Core/Src/main.c:26:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   25 | #include "string.h"
+  +++ |+#include <stdio.h>
+   26 | /* USER CODE END Includes */
+../Core/Src/main.c:196:35: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  196 |                                   sprintf(str, "Perioda blikani \r\n", cntr++);
+      |                                   ^~~~~~~
+../Core/Src/main.c:196:35: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:196:48: warning: too many arguments for format [-Wformat-extra-args]
+  196 |                                   sprintf(str, "Perioda blikani \r\n", cntr++);
+      |                                                ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:198:85: error: expected expression before 'uint32_t'
+  198 |                                   HAL_UART_Transmit(&hlpuart1, (uint8_t *)tickLedR, uint32_t, 100);\
+      |                                                                                     ^~~~~~~~
+../Core/Src/main.c:198:35: error: too few arguments to function 'HAL_UART_Transmit'
+  198 |                                   HAL_UART_Transmit(&hlpuart1, (uint8_t *)tickLedR, uint32_t, 100);\
+      |                                   ^~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1696:19: note: declared here
+ 1696 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                   ^~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+17:22:01 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:196:35: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  196 |                                   sprintf(str, "Perioda blikani \r\n", cntr++);
+      |                                   ^~~~~~~
+../Core/Src/main.c:26:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   25 | #include "string.h"
+  +++ |+#include <stdio.h>
+   26 | /* USER CODE END Includes */
+../Core/Src/main.c:196:35: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  196 |                                   sprintf(str, "Perioda blikani \r\n", cntr++);
+      |                                   ^~~~~~~
+../Core/Src/main.c:196:35: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:196:48: warning: too many arguments for format [-Wformat-extra-args]
+  196 |                                   sprintf(str, "Perioda blikani \r\n", cntr++);
+      |                                                ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:198:64: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+  198 |                                   HAL_UART_Transmit(&hlpuart1, (uint32_t *)tickLedR, 1, 100);\
+      |                                                                ^~~~~~~~~~~~~~~~~~~~
+      |                                                                |
+      |                                                                uint32_t * {aka long unsigned int *}
+In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1696:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+ 1696 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  25384	     96	   3664	  29144	   71d8	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+17:23:42 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:144:12: warning: unused variable 'str' [-Wunused-variable]
+  144 |       char str[20];
+      |            ^~~
+../Core/Src/main.c:143:16: warning: unused variable 'cntr' [-Wunused-variable]
+  143 |       uint32_t cntr = 0;
+      |                ^~~~
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  22676	     16	   3328	  26020	   65a4	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+17:29:21 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:112:1: error: expected identifier or '(' before 'while'
+  112 | while (1) {
+      | ^~~~~
+../Core/Src/main.c:410:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  410 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:388:13: warning: 'MX_DMA_Init' defined but not used [-Wunused-function]
+  388 | static void MX_DMA_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:355:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+  355 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:307:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+  307 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:259:13: warning: 'MX_LPUART1_UART_Init' defined but not used [-Wunused-function]
+  259 | static void MX_LPUART1_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+17:29:42 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:144:12: warning: unused variable 'str' [-Wunused-variable]
+  144 |       char str[20];
+      |            ^~~
+../Core/Src/main.c:143:16: warning: unused variable 'cntr' [-Wunused-variable]
+  143 |       uint32_t cntr = 0;
+      |                ^~~~
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  22684	     16	   3328	  26028	   65ac	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+17:31:28 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:143:12: warning: unused variable 'str' [-Wunused-variable]
+  143 |       char str[20];
+      |            ^~~
+../Core/Src/main.c:142:16: warning: unused variable 'cntr' [-Wunused-variable]
+  142 |       uint32_t cntr = 0;
+      |                ^~~~
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  22688	     16	   3328	  26032	   65b0	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+17:37:40 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  22712	     12	   3332	  26056	   65c8	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+13:17:50 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'inputCommand':
+../Core/Src/main.c:78:9: error: 'state' undeclared (first use in this function)
+   78 |         state = 4;
+      |         ^~~~~
+../Core/Src/main.c:78:9: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:104:18: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+  104 |         period = atoi(rxbuffer + 5);
+      |                  ^~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:176:55: error: 'rxbuffer' undeclared (first use in this function); did you mean 'setbuffer'?
+  176 |           if (HAL_UART_Receive(&hlpuart1, (uint8_t *)&rxbuffer[rxpos], 1, 0) == HAL_OK) {
+      |                                                       ^~~~~~~~
+      |                                                       setbuffer
+../Core/Src/main.c:176:64: error: 'rxpos' undeclared (first use in this function)
+  176 |           if (HAL_UART_Receive(&hlpuart1, (uint8_t *)&rxbuffer[rxpos], 1, 0) == HAL_OK) {
+      |                                                                ^~~~~
+../Core/Src/main.c:186:42: error: 'SIZEB' undeclared (first use in this function)
+  186 |                   } else if (rxpos + 1 < SIZEB) {
+      |                                          ^~~~~
+../Core/Src/main.c:194:22: error: 'tckLedB' undeclared (first use in this function); did you mean 'tickLedB'?
+  194 |           if (tick - tckLedB >= 250) {
+      |                      ^~~~~~~
+      |                      tickLedB
+../Core/Src/main.c:208:23: error: 'tck' undeclared (first use in this function); did you mean 'tick'?
+  208 |                   if (tck - tckLedB >= 100)  {
+      |                       ^~~
+      |                       tick
+../Core/Src/main.c:229:91: warning: passing argument 1 of 'strlen' makes pointer from integer without a cast [-Wint-conversion]
+  229 |                           HAL_UART_Transmit(&hlpuart1, (uint8_t *)ButtonPressTime, strlen(ButtonPressTime), 100);
+      |                                                                                           ^~~~~~~~~~~~~~~
+      |                                                                                           |
+      |                                                                                           uint32_t {aka long unsigned int}
+In file included from ../Core/Src/main.c:25:
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint32_t' {aka 'long unsigned int'}
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+../Core/Src/main.c:234:18: error: 'tckall' undeclared (first use in this function)
+  234 |           if(tck-tckall>=period){
+      |                  ^~~~~~
+../Core/Src/main.c:168:8: warning: unused variable 'str' [-Wunused-variable]
+  168 |   char str[20];
+      |        ^~~
+../Core/Src/main.c:167:12: warning: unused variable 'cntr' [-Wunused-variable]
+  167 |   uint32_t cntr = 0;
+      |            ^~~~
+../Core/Src/main.c:164:12: warning: unused variable 'RedLDPeriod' [-Wunused-variable]
+  164 |   uint32_t RedLDPeriod=500;
+      |            ^~~~~~~~~~~
+../Core/Src/main.c:163:12: warning: unused variable 'BlueLDPeriod' [-Wunused-variable]
+  163 |   uint32_t BlueLDPeriod=250;
+      |            ^~~~~~~~~~~~
+../Core/Src/main.c:162:8: warning: unused variable 'stav4' [-Wunused-variable]
+  162 |   bool stav4 = false;
+      |        ^~~~~
+../Core/Src/main.c:157:8: warning: unused variable 'RedBlinking' [-Wunused-variable]
+  157 |   bool RedBlinking = true;
+      |        ^~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+13:20:57 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'inputCommand':
+../Core/Src/main.c:107:18: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+  107 |         period = atoi(rxbuffer + 5);
+      |                  ^~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:171:63: error: array subscript is not an integer
+  171 |           if (HAL_UART_Receive(&hlpuart1, (uint8_t *)&rxbuffer[rxpos], 1, 0) == HAL_OK) {
+      |                                                               ^
+../Core/Src/main.c:172:31: error: array subscript is not an integer
+  172 |                   if (rxbuffer[rxpos] == '\r' || rxbuffer[rxpos] == '\n') {
+      |                               ^
+../Core/Src/main.c:172:58: error: array subscript is not an integer
+  172 |                   if (rxbuffer[rxpos] == '\r' || rxbuffer[rxpos] == '\n') {
+      |                                                          ^
+../Core/Src/main.c:173:37: warning: the comparison will always evaluate as 'true' for the address of 'rxpos' will never be NULL [-Waddress]
+  173 |                           if (rxpos != 0) {
+      |                                     ^~
+../Core/Src/main.c:54:6: note: 'rxpos' declared here
+   54 | char rxpos[100];
+      |      ^~~~~
+../Core/Src/main.c:175:85: warning: passing argument 3 of 'HAL_UART_Transmit' makes integer from pointer without a cast [-Wint-conversion]
+  175 |                                   HAL_UART_Transmit(&hlpuart1, (uint8_t *)rxbuffer, rxpos, 100);
+      |                                                                                     ^~~~~
+      |                                                                                     |
+      |                                                                                     char *
+In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1696:95: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'char *'
+ 1696 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                                      ~~~~~~~~~^~~~
+../Core/Src/main.c:177:43: error: array subscript is not an integer
+  177 |                                   rxbuffer[rxpos] = '\0';
+      |                                           ^
+../Core/Src/main.c:180:33: error: assignment to expression with array type
+  180 |                           rxpos = 0;
+      |                                 ^
+../Core/Src/main.c:181:42: error: 'SIZEB' undeclared (first use in this function)
+  181 |                   } else if (rxpos + 1 < SIZEB) {
+      |                                          ^~~~~
+../Core/Src/main.c:181:42: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:182:76: error: array subscript is not an integer
+  182 |                           HAL_UART_Transmit(&hlpuart1, (uint8_t *)&rxbuffer[rxpos], 1, 10);
+      |                                                                            ^
+../Core/Src/main.c:183:32: error: lvalue required as increment operand
+  183 |                           rxpos++;
+      |                                ^~
+../Core/Src/main.c:203:23: error: 'tck' undeclared (first use in this function); did you mean 'tick'?
+  203 |                   if (tck - tickLedB >= 100)  {
+      |                       ^~~
+      |                       tick
+../Core/Src/main.c:224:91: warning: passing argument 1 of 'strlen' makes pointer from integer without a cast [-Wint-conversion]
+  224 |                           HAL_UART_Transmit(&hlpuart1, (uint8_t *)ButtonPressTime, strlen(ButtonPressTime), 100);
+      |                                                                                           ^~~~~~~~~~~~~~~
+      |                                                                                           |
+      |                                                                                           uint32_t {aka long unsigned int}
+In file included from ../Core/Src/main.c:25:
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint32_t' {aka 'long unsigned int'}
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+../Core/Src/main.c:229:19: error: 'tckall' undeclared (first use in this function)
+  229 |           if(tick-tckall>=period){
+      |                   ^~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+13:21:41 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'inputCommand':
+../Core/Src/main.c:108:18: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+  108 |         period = atoi(rxbuffer + 5);
+      |                  ^~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:172:63: error: array subscript is not an integer
+  172 |           if (HAL_UART_Receive(&hlpuart1, (uint8_t *)&rxbuffer[rxpos], 1, 0) == HAL_OK) {
+      |                                                               ^
+../Core/Src/main.c:173:31: error: array subscript is not an integer
+  173 |                   if (rxbuffer[rxpos] == '\r' || rxbuffer[rxpos] == '\n') {
+      |                               ^
+../Core/Src/main.c:173:58: error: array subscript is not an integer
+  173 |                   if (rxbuffer[rxpos] == '\r' || rxbuffer[rxpos] == '\n') {
+      |                                                          ^
+../Core/Src/main.c:174:37: warning: the comparison will always evaluate as 'true' for the address of 'rxpos' will never be NULL [-Waddress]
+  174 |                           if (rxpos != 0) {
+      |                                     ^~
+../Core/Src/main.c:54:6: note: 'rxpos' declared here
+   54 | char rxpos[100];
+      |      ^~~~~
+../Core/Src/main.c:176:85: warning: passing argument 3 of 'HAL_UART_Transmit' makes integer from pointer without a cast [-Wint-conversion]
+  176 |                                   HAL_UART_Transmit(&hlpuart1, (uint8_t *)rxbuffer, rxpos, 100);
+      |                                                                                     ^~~~~
+      |                                                                                     |
+      |                                                                                     char *
+In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1696:95: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'char *'
+ 1696 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                                      ~~~~~~~~~^~~~
+../Core/Src/main.c:178:43: error: array subscript is not an integer
+  178 |                                   rxbuffer[rxpos] = '\0';
+      |                                           ^
+../Core/Src/main.c:181:33: error: assignment to expression with array type
+  181 |                           rxpos = 0;
+      |                                 ^
+../Core/Src/main.c:182:42: error: 'SIZEB' undeclared (first use in this function)
+  182 |                   } else if (rxpos + 1 < SIZEB) {
+      |                                          ^~~~~
+../Core/Src/main.c:182:42: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:183:76: error: array subscript is not an integer
+  183 |                           HAL_UART_Transmit(&hlpuart1, (uint8_t *)&rxbuffer[rxpos], 1, 10);
+      |                                                                            ^
+../Core/Src/main.c:184:32: error: lvalue required as increment operand
+  184 |                           rxpos++;
+      |                                ^~
+../Core/Src/main.c:225:91: warning: passing argument 1 of 'strlen' makes pointer from integer without a cast [-Wint-conversion]
+  225 |                           HAL_UART_Transmit(&hlpuart1, (uint8_t *)ButtonPressTime, strlen(ButtonPressTime), 100);
+      |                                                                                           ^~~~~~~~~~~~~~~
+      |                                                                                           |
+      |                                                                                           uint32_t {aka long unsigned int}
+In file included from ../Core/Src/main.c:25:
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint32_t' {aka 'long unsigned int'}
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+13:23:56 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'inputCommand':
+../Core/Src/main.c:109:18: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+  109 |         period = atoi(rxbuffer + 5);
+      |                  ^~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:226:91: warning: passing argument 1 of 'strlen' makes pointer from integer without a cast [-Wint-conversion]
+  226 |                           HAL_UART_Transmit(&hlpuart1, (uint8_t *)ButtonPressTime, strlen(ButtonPressTime), 100);
+      |                                                                                           ^~~~~~~~~~~~~~~
+      |                                                                                           |
+      |                                                                                           uint32_t {aka long unsigned int}
+In file included from ../Core/Src/main.c:25:
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint32_t' {aka 'long unsigned int'}
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  23220	     92	   3692	  27004	   697c	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+13:25:04 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'inputCommand':
+../Core/Src/main.c:109:18: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+  109 |         period = atoi(rxbuffer + 5);
+      |                  ^~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:226:91: error: 'uin8_t' undeclared (first use in this function); did you mean 'uint8_t'?
+  226 |                           HAL_UART_Transmit(&hlpuart1, (uint8_t *)ButtonPressTime, strlen(uin8_t)*ButtonPressTime, 100);
+      |                                                                                           ^~~~~~
+      |                                                                                           uint8_t
+../Core/Src/main.c:226:91: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+13:25:16 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'inputCommand':
+../Core/Src/main.c:109:18: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+  109 |         period = atoi(rxbuffer + 5);
+      |                  ^~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:226:91: warning: passing argument 1 of 'strlen' makes pointer from integer without a cast [-Wint-conversion]
+  226 |                           HAL_UART_Transmit(&hlpuart1, (uint8_t *)ButtonPressTime, strlen(ButtonPressTime), 100);
+      |                                                                                           ^~~~~~~~~~~~~~~
+      |                                                                                           |
+      |                                                                                           uint32_t {aka long unsigned int}
+In file included from ../Core/Src/main.c:25:
+C:\ST\STM32CubeIDE_1.16.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint32_t' {aka 'long unsigned int'}
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  23220	     92	   3692	  27004	   697c	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 
+13:34:24 **** Incremental Build of configuration Debug for project cv2 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L4R5xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'inputCommand':
+../Core/Src/main.c:110:18: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+  110 |         period = atoi(rxbuffer + 5);
+      |                  ^~~~
+arm-none-eabi-gcc -o "cv2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\mates\Desktop\TUL\VST\cviceni\cv2\STM32L4R5ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="cv2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: cv2.elf
+ 
+arm-none-eabi-size  cv2.elf 
+arm-none-eabi-objdump -h -S cv2.elf  > "cv2.list"
+   text	   data	    bss	    dec	    hex	filename
+  25832	     92	   3732	  29656	   73d8	cv2.elf
+Finished building: default.size.stdout
+ 
+Finished building: cv2.list
+ 

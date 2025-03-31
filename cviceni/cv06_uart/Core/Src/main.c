@@ -54,8 +54,9 @@ uint32_t blik_counter = 0;
 bool blik_bool = true;
 uint32_t cntr = 0;
 char str[100];
-uint32_t time_start;
 uint32_t time_end;
+uint32_t time_start;
+uint32_t time_start2;
 
 /* USER CODE END PV */
 
@@ -76,6 +77,7 @@ bool tx_in_process;
 uint32_t len_process;
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart){
 	time_end = HAL_GetTick();
+	time_start2 = time_start;
 	tx_in_process = false;
 	blik_bool = false;
 }
@@ -118,6 +120,8 @@ int main(void)
   /* USER CODE BEGIN 2 */
   uint32_t state = 1;
   char type_of_transmit[15];
+  char rxbuffer[10];
+  uint8_t rxpos;
   HAL_StatusTypeDef err;
   /* USER CODE END 2 */
 
@@ -128,52 +132,68 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  sprintf(str, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-	  if (!tx_in_process){
-		  time_start = HAL_GetTick();
-		  tx_in_process = true;
-		  switch (state){
-		  case 0:
-			  err = HAL_UART_Transmit(&hlpuart1, (uint8_t *)str, strlen(str), 100);
-			  sprintf(type_of_transmit, "Trasmit");
-			  break;
-		  case 1:
-			  err = HAL_UART_Transmit_DMA(&hlpuart1, (uint8_t *)str, strlen(str));
-			  sprintf(type_of_transmit, "Trasmit_DMA");
-			  break;
-		  case 2:
-			  err = HAL_UART_Transmit_IT(&hlpuart1, (uint8_t *)str, strlen(str));
-			  sprintf(type_of_transmit, "Trasmit_IT");
-			  break;
-		  }
-		  if (err != HAL_OK){
-			  Error_Handler();
-		  }
-	  }
-	  if (tx_in_process && blik_bool){
-		  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-		  blik_counter += 1;
-	  }
-	  if (!blik_bool){
-		  	len_process = time_end-time_start;
-			sprintf(str, "\r\n Start: %lu ,Transmit length: %lu, Blik count: %lu, Type: %s  \r\n", time_start, len_process, blik_counter, type_of_transmit);
-			if (!tx_in_process){
-				tx_in_process = 1;
-				HAL_StatusTypeDef err = HAL_UART_Transmit_DMA(&hlpuart1, (uint8_t *)str, strlen(str));
-				blik_counter = 0;
-				if (err != HAL_OK){
-					Error_Handler();
-				}
-			}
-			HAL_Delay(1000);
-			state = state + 1;
-			blik_bool = true;
-	  }
-	  if (state > 2){
-		  state = 1;
-	  }
-//	  tx_in_process = false;
-  }
+//	  HAL_UART_Transmit(&hlpuart1, (uint8_t *)"\r\nStart Programu\r\n", 18, 100);
+//	  while (1){
+//		  if (HAL_UART_Receive(&hlpuart1, (uint8_t *)&rxbuffer[rxpos], 1, 0) == HAL_OK){
+//			  if (rxbuffer[rxpos] == '\r' || rxbuffer[rxpos] == '\n'){
+//				  if (rxpos != 0){
+//					  HAL_UART_Transmit(&hlpuart1, (uint8_t *)"\r\nPrikaz: ", 10, 100);
+//					  HAL_UART_Transmit(&hlpuart1, (uint8_t *)rxbuffer, rxpos, 100);
+//					  HAL_UART_Transmit(&hlpuart1, (uint8_t *)"\r\n", 2, 100);
+//				  }
+//				  rxpos = 0;
+//			  }
+//			  else if (rxpos + 1 < sizeof(rxbuffer)){
+//				  HAL_UART_Transmit(&hlpuart1, (uint8_t *)&rxbuffer[rxpos], 1, 10);
+//				  rxpos++;
+//			  }
+//		  }
+//	  }
+
+//	  sprintf(str, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+//	  if (!tx_in_process){
+//		  time_start = HAL_GetTick();
+//		  tx_in_process = true;
+//		  switch (state){
+//		  case 0:
+//			  err = HAL_UART_Transmit(&hlpuart1, (uint8_t *)str, strlen(str), 100);
+//			  sprintf(type_of_transmit, "Trasmit");
+//			  break;
+//		  case 1:
+//			  err = HAL_UART_Transmit_DMA(&hlpuart1, (uint8_t *)str, strlen(str));
+//			  sprintf(type_of_transmit, "Trasmit_DMA");
+//			  break;
+//		  case 2:
+//			  err = HAL_UART_Transmit_IT(&hlpuart1, (uint8_t *)str, strlen(str));
+//			  sprintf(type_of_transmit, "Trasmit_IT");
+//			  break;
+//		  }
+//		  if (err != HAL_OK){
+//			  Error_Handler();
+//		  }
+//	  }
+//	  if (tx_in_process && blik_bool){
+//		  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+//		  blik_counter += 1;
+//	  }
+//	  if (!blik_bool){
+//			sprintf(str, "\r\n Start: %lu ,Transmit length: %lu, Blik count: %lu, Type: %s  \r\n", time_start, time_end-time_start2, blik_counter, type_of_transmit);
+//			if (!tx_in_process){
+//				tx_in_process = 1;
+//				err = HAL_UART_Transmit(&hlpuart1, (uint8_t *)str, strlen(str),100);
+//				blik_counter = 0;
+//			}
+//			if (err != HAL_OK){
+//				  Error_Handler();
+//			}
+//			HAL_Delay(1000);
+//			state = state + 1;
+//			blik_bool = true;
+//	  }
+//	  if (state > 2){
+//		  state = 1;
+//	  }
+//  }
   /* USER CODE END 3 */
 }
 
@@ -469,3 +489,11 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+//Start: 19 ,Transmit length: 8, Blik count: 608, Type: Trasmit_DMA
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+//Start: 1028 ,Transmit length: 8, Blik count: 1182, Type: Trasmit_IT
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+//Start: 2037 ,Transmit length: 8, Blik count: 1790, Type: Trasmit_DMA
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+//Start: 3046 ,Transmit length: 8, Blik count: 2364, Type: Trasmit_IT
